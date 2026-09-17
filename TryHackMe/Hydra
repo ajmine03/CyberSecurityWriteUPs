@@ -1,0 +1,475 @@
+# Hydra
+
+## Platform
+
+TryHackMe
+
+## Overview
+
+**Hydra** is a fast and flexible password-cracking tool commonly used in authorised security testing.
+
+It can perform automated login attempts against network services by testing combinations of usernames and passwords. Hydra supports a wide range of protocols, making it useful for understanding how weak authentication can be identified during penetration testing.
+
+This lab introduces the fundamentals of Hydra, its syntax, wordlists, supported services, and practical usage in a controlled environment.
+
+## Learning Objectives
+
+By completing this lab, you will learn:
+
+• What Hydra is
+
+• How Hydra performs password attacks
+
+• Basic Hydra command syntax
+
+• How usernames and passwords are supplied
+
+• How wordlists are used
+
+• How to target different network services
+
+• How Hydra identifies successful authentication attempts
+
+• How to interpret Hydra output
+
+• The importance of strong authentication
+
+## What is Hydra?
+
+Hydra is a command line tool designed to automate authentication attempts against supported services.
+
+Instead of manually trying different credentials, Hydra can take a list of possible usernames and passwords and test them systematically.
+
+A simplified workflow looks like:
+
+```text
+Username List
+      +
+Password List
+      ↓
+    Hydra
+      ↓
+Authentication Attempts
+      ↓
+Target Service
+      ↓
+Response Analysis
+```
+
+Hydra is particularly useful during authorised penetration tests when assessing whether a service is vulnerable to weak or easily guessable credentials.
+
+## Authentication Attacks
+
+Authentication is the process of verifying who a user is.
+
+A typical login system may require:
+
+```text
+Username + Password
+```
+
+If an application or service allows unlimited login attempts without adequate protection, an attacker may repeatedly try different credentials.
+
+Hydra can automate this process.
+
+## Brute Force vs Password Spraying
+
+### Brute Force
+
+A brute force attack attempts many possible passwords against an account or service.
+
+The password space can become extremely large depending on the possible characters and password length.
+
+### Password Attack Using Wordlists
+
+Instead of generating every possible combination, a tester can use a wordlist containing commonly used or previously discovered passwords.
+
+This can significantly reduce the number of attempts required.
+
+### Password Spraying
+
+Password spraying uses a small number of commonly used passwords against many different usernames.
+
+The goal is to avoid repeatedly attacking a single account.
+
+These techniques have different characteristics and should only be performed against systems where testing is authorised.
+
+## Wordlists
+
+Wordlists are an important part of password testing.
+
+A wordlist is simply a file containing candidate values, usually one per line.
+
+For example:
+
+```text
+password
+admin
+welcome
+letmein
+example123
+```
+
+During a Hydra attack, Hydra can read candidate usernames or passwords from these files.
+
+Common wordlist locations on security focused Linux distributions may include:
+
+```text
+/usr/share/wordlists/
+```
+
+The quality of a wordlist can significantly affect the effectiveness and speed of password testing.
+
+## Basic Hydra Syntax
+
+A general Hydra command follows a structure similar to:
+
+```bash
+hydra [options] [target] [service]
+```
+
+When username and password wordlists are involved, additional options specify where the candidate credentials should come from.
+
+A generic example is:
+
+```bash
+hydra -l username -P passwords.txt target.example ssh
+```
+
+Here:
+
+`-l` specifies a single username.
+
+`-P` specifies a password wordlist.
+
+The target identifies the host being tested.
+
+The final argument identifies the service or protocol.
+
+The exact syntax depends on the service being tested.
+
+## Username Options
+
+Hydra provides different options for supplying usernames.
+
+### Single Username
+
+A single username can be specified with:
+
+```bash
+-l username
+```
+
+### Username List
+
+A file containing multiple usernames can be supplied using:
+
+```bash
+-L usernames.txt
+```
+
+This allows Hydra to test multiple possible accounts.
+
+## Password Options
+
+Passwords can similarly be provided in different ways.
+
+### Single Password
+
+A single password can be supplied with:
+
+```bash
+-p password
+```
+
+### Password List
+
+A password wordlist can be supplied with:
+
+```bash
+-P passwords.txt
+```
+
+The uppercase and lowercase options are important because they perform different functions.
+
+## Hydra Modules
+
+Hydra supports many different protocols and services.
+
+Examples include:
+
+```text
+SSH
+FTP
+HTTP
+HTTPS
+SMB
+SMTP
+RDP
+Telnet
+MySQL
+PostgreSQL
+```
+
+Hydra uses modules to communicate with different services.
+
+The correct module must be selected according to the authentication service being tested.
+
+## SSH
+
+SSH provides remote command line access to a system.
+
+A generic Hydra example for an authorised SSH assessment is:
+
+```bash
+hydra -l username -P passwords.txt target.example ssh
+```
+
+Hydra attempts the supplied credentials against the SSH service and analyses the responses.
+
+## FTP
+
+FTP is another network service that can provide username and password authentication.
+
+A generic example is:
+
+```bash
+hydra -l username -P passwords.txt target.example ftp
+```
+
+The same general concept applies, but Hydra uses the FTP protocol module.
+
+## Web Login Forms
+
+Hydra can also interact with certain HTTP based login forms.
+
+Web form attacks are more complex because Hydra needs to understand:
+
+• The login endpoint
+
+• Username parameter
+
+• Password parameter
+
+• HTTP method
+
+• Failure or success condition
+
+A generic structure can look like:
+
+```bash
+hydra target.example http-post-form "login_path:parameters:failure_condition"
+```
+
+The exact syntax depends on how the web application implements authentication.
+
+## Understanding Hydra Output
+
+Hydra provides information about the progress and results of an attack.
+
+A successful credential pair may be reported in a format similar to:
+
+```text
+[service] host: target
+login: username
+password: password
+```
+
+When analysing output, pay attention to:
+
+• Target host
+
+• Service
+
+• Username
+
+• Password
+
+• Number of attempts
+
+• Connection information
+
+It is important to verify discovered credentials rather than assuming every reported result is valid.
+
+## Useful Options
+
+Hydra provides many command line options.
+
+Some commonly encountered options include:
+
+```text
+-l    Single username
+-L    Username wordlist
+-p    Single password
+-P    Password wordlist
+-s    Specify a port
+-v    Verbose output
+-V    Show individual login attempts
+-t    Number of parallel tasks
+-f    Stop after finding a valid credential
+-h    Display help
+```
+
+Options can be combined depending on the requirements of the assessment.
+
+## Performance
+
+Hydra can perform multiple authentication attempts concurrently.
+
+The number of parallel tasks can be controlled using:
+
+```bash
+-t
+```
+
+Increasing the number of tasks can improve speed, but it can also:
+
+• Increase network traffic
+
+• Put additional load on the target
+
+• Trigger security controls
+
+• Cause account lockouts
+
+Therefore, concurrency should be configured carefully during authorised testing.
+
+## Hydra and Network Services
+
+Before using Hydra, it is important to understand what services are actually exposed by the target.
+
+A typical authorised assessment may look like:
+
+```text
+Reconnaissance
+      ↓
+Identify Open Services
+      ↓
+Identify Authentication Mechanism
+      ↓
+Choose Appropriate Hydra Module
+      ↓
+Select Wordlists
+      ↓
+Perform Controlled Testing
+      ↓
+Validate Results
+```
+
+This demonstrates why Hydra is normally used after basic reconnaissance rather than blindly targeting services.
+
+## Security Defences
+
+Hydra demonstrates why authentication protections are important.
+
+Applications and services can reduce password attack risk through:
+
+### Rate Limiting
+
+Restricting how quickly authentication attempts can be made.
+
+### Account Lockout
+
+Temporarily locking an account after repeated failed attempts.
+
+### Multi Factor Authentication
+
+Requiring an additional authentication factor beyond a password.
+
+### Strong Password Policies
+
+Encouraging or enforcing sufficiently strong and unique passwords.
+
+### Monitoring
+
+Logging and detecting unusual authentication activity.
+
+### CAPTCHA
+
+Using challenges to reduce automated authentication attempts in appropriate situations.
+
+## Security Relevance
+
+Hydra is useful for demonstrating the risks associated with weak authentication.
+
+A service may be exposed to password attacks when it has:
+
+• Weak passwords
+
+• Reused credentials
+
+• No rate limiting
+
+• Poor account lockout controls
+
+• Missing multi factor authentication
+
+• Exposed authentication services
+
+Hydra helps security testers evaluate these weaknesses in controlled environments.
+
+## Practical Skills
+
+After completing a Hydra lab, you should be comfortable with:
+
+• Understanding Hydra's purpose
+
+• Reading Hydra command syntax
+
+• Selecting username and password inputs
+
+• Using wordlists
+
+• Choosing a service module
+
+• Adjusting Hydra options
+
+• Understanding Hydra output
+
+• Performing controlled authentication testing
+
+• Understanding defensive measures against password attacks
+
+## Ethical Considerations
+
+Hydra can generate a large number of authentication attempts.
+
+Only use it against systems where you have explicit permission to perform security testing.
+
+Unauthorised password attacks can disrupt services, trigger account lockouts, or result in legal and operational consequences.
+
+For learning purposes, use TryHackMe machines, your own lab environment, or systems specifically provided for authorised testing.
+
+## Key Takeaways
+
+**Hydra automates authentication testing**
+
+It can test many credential combinations against supported services.
+
+**Wordlists are important**
+
+They provide candidate usernames and passwords for testing.
+
+**Different services require different modules**
+
+The correct Hydra module must match the target service.
+
+**Output must be validated**
+
+A reported credential should be tested carefully to confirm that it actually works.
+
+**Speed is configurable**
+
+Parallel tasks can make testing faster but can also increase load and detection risk.
+
+**Authentication controls matter**
+
+Rate limiting, account lockouts, MFA, strong passwords, and monitoring can significantly reduce password attack risk.
+
+## Final Summary
+
+Hydra is an important tool for learning about authentication security and password attacks.
+
+The lab provides a foundation for understanding Hydra's command line syntax, wordlists, service modules, authentication testing, and output.
+
+The knowledge gained here can later be applied to broader penetration testing topics such as network enumeration, service assessment, authentication security, and web application testing.
