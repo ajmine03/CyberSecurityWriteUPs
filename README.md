@@ -43,5 +43,5 @@ No flags, passwords, or copyrighted challenge answers are shared. All writeups f
 
 **Ajmine Adil Sadik**
 
-- GitHub: https://github.com/ajmine03
-- LinkedIn: https://linkedin.com/in/ajmin3
+- GitHub: [ajmine03](https://github.com/ajmine03)
+- LinkedIn: [ajmin3](https://linkedin.com/in/ajmin3)
