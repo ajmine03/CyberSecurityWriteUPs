@@ -1,0 +1,27 @@
+# MkDocs build outputs
+site/
+site_output/
+_site/
+
+# Python virtual environments & bytecode
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Cache directories
+.cache/
+.pytest_cache/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~

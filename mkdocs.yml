@@ -1,0 +1,96 @@
+site_name: CyberSecurityWriteUPs
+site_description: Break. Learn. Document. — CTF writeups, penetration testing notes, security research, and practical cybersecurity knowledge.
+site_author: Ajmine Adil Sadik
+site_url: https://ajmine03.github.io/CyberSecurityWriteUPs/
+
+repo_name: ajmine03/CyberSecurityWriteUPs
+repo_url: https://github.com/ajmine03/CyberSecurityWriteUPs
+
+docs_dir: docs
+site_dir: site_output
+
+hooks:
+  - hooks/setup_docs.py
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: fontawesome/solid/terminal
+    repo: fontawesome/brands/github
+  palette:
+    # Terminal Dark Theme (Default)
+    - scheme: slate
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    # Clean Light Theme
+    - scheme: default
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+plugins:
+  - search
+  - awesome-pages
+
+extra_css:
+  - assets/stylesheets/terminal.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ajmine03
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/ajmin3
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
