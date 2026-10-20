@@ -1,8 +1,8 @@
 """MkDocs Pre-build Hook for CyberSecurityWriteUPs.
 
 Ensures that the docs/ directory cleanly mirrors the repository content
-(CTF, HTB, TryHackMe, Commands, index.md, assets, .pages) using relative symlinks
-or copies across all operating systems.
+(notion-content, index.md, assets, .pages) using relative symlinks
+or copies across all operating systems, and removes any broken symlinks.
 """
 
 import os
@@ -14,19 +14,25 @@ def on_pre_build(config):
   repo_root = Path(config.config_file_path).parent.resolve()
   docs_dir = Path(config['docs_dir']).resolve()
 
-  # List of root entities that comprise the documentation site
+  docs_dir.mkdir(parents=True, exist_ok=True)
+
+  # 1. Clean up any broken symlinks in docs/
+  for item in docs_dir.iterdir():
+    if item.is_symlink():
+      try:
+        # If target does not exist, unlink broken symlink
+        if not item.exists():
+          item.unlink(missing_ok=True)
+      except Exception:
+        item.unlink(missing_ok=True)
+
+  # 2. List of root entities that comprise the documentation site
   targets = [
-      'CTF',
-      'HTB',
-      'TryHackMe',
-      'Commands',
       'notion-content',
       'index.md',
       'assets',
       '.pages',
   ]
-
-  docs_dir.mkdir(parents=True, exist_ok=True)
 
   for item_name in targets:
     src = repo_root / item_name

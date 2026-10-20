@@ -1,7 +1,3 @@
 nav:
   - Home: index.md
-  - CTF: CTF
-  - Hack The Box: HTB
-  - TryHackMe: TryHackMe
-  - Commands: Commands
-  - Notion Writeups: notion-content
+  - Writeups: notion-content
