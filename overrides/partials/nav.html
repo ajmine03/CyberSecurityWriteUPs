@@ -1,0 +1,22 @@
+{#-
+  Custom Navigation partial with Left Sidebar Toggle matching media_1792524002169.png
+-#}
+{% import "partials/nav-item.html" as item with context %}
+{% set class = "md-nav md-nav--primary" %}
+<nav class="{{ class }}" aria-label="{{ lang.t('nav') }}" data-md-level="0">
+  <div class="sidebar-header-bar sidebar-header-bar--left">
+    <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-left" title="Collapse Primary Sidebar" aria-label="Collapse Primary Sidebar">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+        <line x1="9" x2="9" y1="3" y2="21"/>
+      </svg>
+    </button>
+    <span class="sidebar-header-label">Navigation</span>
+  </div>
+  <ul class="md-nav__list" data-md-scrollfix>
+    {% for nav_item in nav.items %}
+      {% set path = "__nav_" ~ loop.index %}
+      {{ item.render(nav_item, path, 1) }}
+    {% endfor %}
+  </ul>
+</nav>

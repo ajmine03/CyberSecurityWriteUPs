@@ -1,5 +1,5 @@
 {#-
-  Custom Header matching Notion/GitBook cybersecurity reference layout
+  Clean Top Header matching reference screenshot media_1792521521089.png
 -#}
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
@@ -8,25 +8,17 @@
       {% include "partials/logo.html" %}
     </a>
 
-    <!-- Left Primary Sidebar Toggle Button -->
-    <button type="button" class="md-header__button md-icon panel-toggle-btn panel-toggle-btn--left" id="panel-toggle-left" title="Toggle Navigation Panel (Left)" aria-label="Toggle Navigation Panel">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-        <line x1="9" x2="9" y1="3" y2="21"/>
-      </svg>
-    </button>
-
-    <!-- Hidden native drawer trigger for mobile accessibility -->
-    <label class="md-header__button md-icon md-mobile-drawer-label" for="__drawer" style="display: none;">
+    <!-- Mobile drawer trigger (visible only on mobile) -->
+    <label class="md-header__button md-icon md-mobile-drawer-label" for="__drawer">
       {% set icon = config.theme.icon.menu or "material/menu" %}
       {% include ".icons/" ~ icon ~ ".svg" %}
     </label>
 
-    <!-- Site Title & Subtitle Stack -->
+    <!-- Site Title & Subtitle Stack (No truncation) -->
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
-          <span class="md-ellipsis header-brand-wrap">
+          <span class="header-brand-wrap">
             <span class="header-brand-title">{{ config.site_name }}</span>
             <span class="header-brand-subtitle">Break. Learn. Document.</span>
           </span>
@@ -55,21 +47,13 @@
       {% endif %}
     {% endif %}
 
-    <!-- Inline Header Tabs on the Right matching screenshot media_1792521521089.png -->
+    <!-- Inline Header Tabs on the Right (CTF, HTB, TryHackMe, Commands) -->
     <nav class="md-header__tabs-inline" aria-label="Sections">
       <a href="{{ 'CTF/' | url }}" class="header-tab {% if page and page.url and page.url.startswith('CTF') %}header-tab--active{% endif %}">CTF</a>
       <a href="{{ 'HTB/' | url }}" class="header-tab {% if page and page.url and page.url.startswith('HTB') %}header-tab--active{% endif %}">HTB</a>
       <a href="{{ 'TryHackMe/' | url }}" class="header-tab {% if page and page.url and page.url.startswith('TryHackMe') %}header-tab--active{% endif %}">TryHackMe</a>
       <a href="{{ 'Commands/' | url }}" class="header-tab {% if page and page.url and page.url.startswith('Commands') %}header-tab--active{% endif %}">Commands</a>
     </nav>
-
-    <!-- Right Auxiliary Panel (TOC / "On This Page") Toggle Button -->
-    <button type="button" class="md-header__button md-icon panel-toggle-btn panel-toggle-btn--right" id="panel-toggle-right" title="Toggle Auxiliary Panel (Right / TOC)" aria-label="Toggle Auxiliary Panel">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-        <line x1="15" x2="15" y1="3" y2="21"/>
-      </svg>
-    </button>
 
     <!-- Palette switch (Dark / Light) -->
     {% if config.theme.palette %}
@@ -89,67 +73,3 @@
     {% endif %}
   </nav>
 </header>
-
-<script>
-  (function() {
-    function applyPanelState() {
-      if (localStorage.getItem('panel-left-collapsed') === 'true') {
-        document.body.classList.add('panel-left-collapsed');
-      } else {
-        document.body.classList.remove('panel-left-collapsed');
-      }
-      if (localStorage.getItem('panel-right-collapsed') === 'true') {
-        document.body.classList.add('panel-right-collapsed');
-      } else {
-        document.body.classList.remove('panel-right-collapsed');
-      }
-    }
-
-    // Apply immediately to avoid flash of unstyled panel
-    applyPanelState();
-
-    function setupPanelToggles() {
-      applyPanelState();
-      var btnLeft = document.getElementById('panel-toggle-left');
-      var btnRight = document.getElementById('panel-toggle-right');
-
-      if (btnLeft && !btnLeft._bound) {
-        btnLeft._bound = true;
-        btnLeft.addEventListener('click', function(e) {
-          e.preventDefault();
-          if (window.innerWidth < 1220) {
-            var drawer = document.getElementById('__drawer');
-            if (drawer) drawer.checked = !drawer.checked;
-            return;
-          }
-          var isCollapsed = document.body.classList.toggle('panel-left-collapsed');
-          localStorage.setItem('panel-left-collapsed', isCollapsed ? 'true' : 'false');
-        });
-      }
-
-      if (btnRight && !btnRight._bound) {
-        btnRight._bound = true;
-        btnRight.addEventListener('click', function(e) {
-          e.preventDefault();
-          if (window.innerWidth < 1220) {
-            var toc = document.getElementById('__toc');
-            if (toc) toc.checked = !toc.checked;
-            return;
-          }
-          var isCollapsed = document.body.classList.toggle('panel-right-collapsed');
-          localStorage.setItem('panel-right-collapsed', isCollapsed ? 'true' : 'false');
-        });
-      }
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setupPanelToggles);
-    } else {
-      setupPanelToggles();
-    }
-
-    if (typeof document$ !== 'undefined') {
-      document$.subscribe(setupPanelToggles);
-    }
-  })();
-</script>
