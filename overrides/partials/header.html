@@ -1,13 +1,7 @@
 {#-
   Custom Header matching Notion/GitBook cybersecurity reference layout
 -#}
-{% set class = "md-header" %}
-{% if "navigation.tabs.sticky" in features %}
-  {% set class = class ~ " md-header--shadow md-header--lifted" %}
-{% elif "navigation.tabs" not in features %}
-  {% set class = class ~ " md-header--shadow" %}
-{% endif %}
-<header class="{{ class }}" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
     <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
       {% include "partials/logo.html" %}
@@ -45,6 +39,15 @@
         {% include "partials/search.html" %}
       {% endif %}
     {% endif %}
+
+    <!-- Inline Header Tabs on the Right matching screenshot media_1792521521089.png -->
+    <nav class="md-header__tabs-inline" aria-label="Sections">
+      <a href="{{ 'CTF/' | url }}" class="header-tab {% if page and page.url and page.url.startswith('CTF') %}header-tab--active{% endif %}">CTF</a>
+      <a href="{{ 'HTB/' | url }}" class="header-tab {% if page and page.url and page.url.startswith('HTB') %}header-tab--active{% endif %}">HTB</a>
+      <a href="{{ 'TryHackMe/' | url }}" class="header-tab {% if page and page.url and page.url.startswith('TryHackMe') %}header-tab--active{% endif %}">TryHackMe</a>
+      <a href="{{ 'Commands/' | url }}" class="header-tab {% if page and page.url and page.url.startswith('Commands') %}header-tab--active{% endif %}">Commands</a>
+    </nav>
+
     {% if config.theme.palette %}
       {% if not config.theme.palette is mapping %}
         {% include "partials/palette.html" %}
@@ -53,18 +56,10 @@
     {% if not config.theme.palette is mapping %}
       {% include "partials/javascripts/palette.html" %}
     {% endif %}
-    {% if config.extra.alternate %}
-      {% include "partials/alternate.html" %}
-    {% endif %}
     {% if config.repo_url %}
       <div class="md-header__source">
         {% include "partials/source.html" %}
       </div>
     {% endif %}
   </nav>
-  {% if "navigation.tabs.sticky" in features %}
-    {% if "navigation.tabs" in features %}
-      {% include "partials/tabs.html" %}
-    {% endif %}
-  {% endif %}
 </header>

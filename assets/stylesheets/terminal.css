@@ -160,35 +160,51 @@ body {
   color: var(--terminal-text-heading);
 }
 
-/* --- Header Tabs (Top-Right Tabs with Green Active Underline) --- */
+/* --- Inline Header Tabs (Top-Right Tabs matching media_1792521521089.png) --- */
 .md-tabs {
-  background-color: transparent !important;
-  border-bottom: none !important;
+  display: none !important;
 }
 
-.md-tabs__list {
+.md-header__tabs-inline {
   display: flex;
-  gap: 0.25rem;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+  margin-right: 0.85rem;
 }
 
-.md-tabs__link {
-  font-size: 0.82rem;
+.header-tab {
+  font-size: 0.84rem;
   font-weight: 500;
-  color: var(--terminal-text-muted);
-  padding: 0.4rem 0.75rem;
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  padding: 0.4rem 0.2rem;
   border-bottom: 2px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.md-tabs__link:hover {
-  color: var(--terminal-text-heading);
+.header-tab:hover {
+  color: #f8fafc !important;
 }
 
-.md-tabs__item--active .md-tabs__link {
-  color: var(--terminal-accent) !important;
-  border-bottom: 2px solid var(--terminal-accent) !important;
-  font-weight: 600;
-  opacity: 1;
+.header-tab--active {
+  color: #22c55e !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #22c55e !important;
+}
+
+@media screen and (max-width: 60em) {
+  .md-header__tabs-inline {
+    display: none;
+  }
+}
+
+/* Back to Top button: float at bottom-right */
+.md-top {
+  position: fixed !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
+  top: auto !important;
 }
 
 /* --- Left Sidebar (Folder Tree with Icons) --- */

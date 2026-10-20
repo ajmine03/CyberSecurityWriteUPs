@@ -1,10 +1,4 @@
-# CTF — General Skills
-
-Welcome to the **General Skills** category. This section covers core command-line proficiency, encoding schemes, pipes, and foundational problem-solving techniques.
-
----
-
-## Challenge Directory
+# General Skills
 
 <div class="writeup-listing">
   <div class="writeup-listing__header">
@@ -16,7 +10,7 @@ Welcome to the **General Skills** category. This section covers core command-lin
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="Based.md" class="writeup-row__title">Based</a>
+      <a href="Based/" class="writeup-row__title">Based</a>
       <p class="writeup-row__desc">Binary, octal, and hexadecimal data conversion under timed socket prompts.</p>
     </div>
     <span class="badge badge--platform">picoCTF</span>
@@ -26,7 +20,7 @@ Welcome to the **General Skills** category. This section covers core command-lin
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="mus1c.md" class="writeup-row__title">mus1c</a>
+      <a href="mus1c/" class="writeup-row__title">mus1c</a>
       <p class="writeup-row__desc">RockStar esoteric language challenge decoding custom musical lyrics into ASCII.</p>
     </div>
     <span class="badge badge--platform">picoCTF</span>
@@ -36,7 +30,7 @@ Welcome to the **General Skills** category. This section covers core command-lin
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="Pico%20-%20Absulate_Nano%20%28Mid%29.md" class="writeup-row__title">Pico - Absolute Nano (Mid)</a>
+      <a href="Pico%20-%20Absulate_Nano%20%28Mid%29/" class="writeup-row__title">Pico - Absolute Nano (Mid)</a>
       <p class="writeup-row__desc">Nano editor navigation, terminal configuration, and hidden text handling.</p>
     </div>
     <span class="badge badge--platform">picoCTF</span>
@@ -46,7 +40,7 @@ Welcome to the **General Skills** category. This section covers core command-lin
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="Plumbing.md" class="writeup-row__title">Plumbing</a>
+      <a href="Plumbing/" class="writeup-row__title">Plumbing</a>
       <p class="writeup-row__desc">Standard streams redirection and piping socket output to grep for flag tokens.</p>
     </div>
     <span class="badge badge--platform">picoCTF</span>
@@ -54,8 +48,3 @@ Welcome to the **General Skills** category. This section covers core command-lin
     <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
   </div>
 </div>
-
----
-
-> [!TIP]
-> Master the command line and character encoding early. They form the foundation of reverse engineering and exploitation.

@@ -7,20 +7,16 @@ hide:
 ---
 
 <div class="terminal-hero">
-  <div class="terminal-badge"><span class="terminal-dot"></span> KNOWLEDGE BASE &amp; WALKTHROUGHS</div>
+  <div class="terminal-badge"><span class="terminal-dot"></span> KNOWLEDGE BASE</div>
   <h1 class="hero-title">CyberSecurityWriteUPs</h1>
   <p class="hero-tagline">Break. Learn. Document.</p>
-  <p class="hero-description">
-    A curated knowledge base of Capture The Flag solutions, Hack The Box CPTS methodology notes,
-    TryHackMe lab writeups, and practical offensive security tooling references.
-  </p>
   
   <div class="hero-search-wrapper">
     <div class="hero-search-box" onclick="document.querySelector('.md-search__input').focus()" role="button" tabindex="0">
       <span class="hero-search-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       </span>
-      <span class="hero-search-placeholder">Search writeups, exploits, tools, and commands...</span>
+      <span class="hero-search-placeholder">Search writeups, tools, commands...</span>
       <kbd class="hero-search-kbd">Ctrl+K</kbd>
     </div>
   </div>
@@ -36,7 +32,7 @@ hide:
 
 ---
 
-## Documentation Categories
+## Categories
 
 <div class="grid cards" markdown>
 
@@ -44,43 +40,43 @@ hide:
 
     ---
 
-    Solutions and methodology breakdowns for Capture The Flag competitions across General Skills, Web, and Cryptography.
+    picoCTF General Skills, encoding, and piping.
 
-    [Explore CTF Writeups :octicons-arrow-right-24:](CTF/README.md)
+    [Browse CTF :octicons-arrow-right-24:](CTF/README.md)
 
--   __Hack The Box (HTB)__
-
-    ---
-
-    Structured notes from the Certified Penetration Testing Specialist (CPTS) track, covering service and web enumeration.
-
-    [Explore HTB Notes :octicons-arrow-right-24:](HTB/README.md)
-
--   __TryHackMe (THM)__
+-   __Hack The Box__
 
     ---
 
-    Room walkthroughs and tooling guides covering Metasploit, Burp Suite, SQLMap, Gobuster, and Hydra.
+    CPTS methodology, service and web enumeration.
 
-    [Explore TryHackMe :octicons-arrow-right-24:](TryHackMe/README.md)
+    [Browse HTB :octicons-arrow-right-24:](HTB/README.md)
 
--   __Commands & Cheatsheets__
+-   __TryHackMe__
 
     ---
 
-    Everyday command-line references for Linux permissions (`chmod`), fast download utilities (`aria2c`), and Python environments.
+    Room walkthroughs, CVE analysis, and tooling.
 
-    [Explore Commands :octicons-arrow-right-24:](Commands/README.md)
+    [Browse THM :octicons-arrow-right-24:](TryHackMe/README.md)
+
+-   __Commands__
+
+    ---
+
+    Cheatsheets for `chmod`, `aria2c`, and `venv`.
+
+    [Browse Commands :octicons-arrow-right-24:](Commands/README.md)
 
 </div>
 
 ---
 
-## Real Writeup Showcase
+## Writeups
 
 <div class="writeup-listing">
   <div class="writeup-listing__header">
-    <span class="writeup-listing__col--title">Writeup / Document</span>
+    <span class="writeup-listing__col--title">Document</span>
     <span class="writeup-listing__col--platform">Platform</span>
     <span class="writeup-listing__col--category">Category</span>
     <span class="writeup-listing__col--difficulty">Difficulty</span>
@@ -89,7 +85,7 @@ hide:
   <div class="writeup-row">
     <div class="writeup-row__main">
       <a href="TryHackMe/CVE-2024-21413-Moniker-Link/" class="writeup-row__title">CVE-2024-21413 — Moniker Link RCE</a>
-      <p class="writeup-row__desc">Analysis of Microsoft Outlook zero-click NTLM credential leak and remote code execution vulnerability.</p>
+      <p class="writeup-row__desc">Microsoft Outlook zero-click NTLM credential leak and RCE vulnerability analysis.</p>
     </div>
     <span class="badge badge--platform">TryHackMe</span>
     <span class="badge badge--category">CVE Analysis</span>
@@ -99,17 +95,17 @@ hide:
   <div class="writeup-row">
     <div class="writeup-row__main">
       <a href="HTB/CPTS/Getting%20Start/Getting%20Started%20-%20Cheatsheet/" class="writeup-row__title">HTB CPTS: Getting Started Cheatsheet</a>
-      <p class="writeup-row__desc">Official reference PDF cheatsheet and companion commands for the CPTS Getting Started module.</p>
+      <p class="writeup-row__desc">Official reference PDF cheatsheet and companion commands for the CPTS module.</p>
     </div>
     <span class="badge badge--platform">Hack The Box</span>
-    <span class="badge badge--category">CPTS Cheatsheet</span>
+    <span class="badge badge--category">CPTS</span>
     <span class="badge badge--cheatsheet"><span class="badge-dot"></span>Reference</span>
   </div>
 
   <div class="writeup-row">
     <div class="writeup-row__main">
       <a href="TryHackMe/BurpSuite/" class="writeup-row__title">Burp Suite: The Basics</a>
-      <p class="writeup-row__desc">Comprehensive guide to proxy configuration, target scoping, repeater, and intruder modules.</p>
+      <p class="writeup-row__desc">Proxy intercept setup, HTTP traffic analysis, Repeater, and Intruder fuzzing.</p>
     </div>
     <span class="badge badge--platform">TryHackMe</span>
     <span class="badge badge--category">Web Tooling</span>
@@ -119,7 +115,7 @@ hide:
   <div class="writeup-row">
     <div class="writeup-row__main">
       <a href="TryHackMe/Metasploit_Exploitation/" class="writeup-row__title">Metasploit: Practical Exploitation</a>
-      <p class="writeup-row__desc">Hands-on workflow for searching modules, configuring payloads, managing sessions, and meterpreter upgrades.</p>
+      <p class="writeup-row__desc">Searching modules, configuring payloads, reverse shells, and Meterpreter sessions.</p>
     </div>
     <span class="badge badge--platform">TryHackMe</span>
     <span class="badge badge--category">Exploitation</span>
@@ -129,7 +125,7 @@ hide:
   <div class="writeup-row">
     <div class="writeup-row__main">
       <a href="CTF/General%20Skills/Based/" class="writeup-row__title">Based — picoCTF 2019</a>
-      <p class="writeup-row__desc">Binary, octal, and hexadecimal conversion under rapid netcat socket constraints.</p>
+      <p class="writeup-row__desc">Binary, octal, and hexadecimal conversion under netcat socket constraints.</p>
     </div>
     <span class="badge badge--platform">picoCTF</span>
     <span class="badge badge--category">General Skills</span>
@@ -139,13 +135,4 @@ hide:
 
 ---
 
-## About & Ethics
-
-### Purpose
-This documentation platform serves as an ongoing log of practical security research, hands-on lab experiments, and competitive CTF problem solving. Notes emphasize core concepts, attack methodologies, and repeatable workflows rather than raw solutions.
-
-### Responsible Disclosure & Ethics
-All writeups and notes are published strictly for educational and authorized penetration testing purposes. Laboratory exercises and challenges are completed within designated, legal environments.
-
-### Author
 **Ajmine Adil Sadik** &bull; [GitHub](https://github.com/ajmine03) &bull; [LinkedIn](https://linkedin.com/in/ajmin3)

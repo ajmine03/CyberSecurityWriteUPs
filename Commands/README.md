@@ -1,10 +1,4 @@
-# Command References & Cheatsheets
-
-A curated collection of quick commands, flags, tools, and utility references used during security audits, CTFs, and system administration.
-
----
-
-## All Command References
+# Commands & References
 
 <div class="writeup-listing">
   <div class="writeup-listing__header">
@@ -16,7 +10,7 @@ A curated collection of quick commands, flags, tools, and utility references use
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="CHMOD.md" class="writeup-row__title">Linux chmod Command</a>
+      <a href="CHMOD/" class="writeup-row__title">Linux chmod Command</a>
       <p class="writeup-row__desc">Modifying Linux file permissions using numeric (octal) and symbolic modes with practical security examples.</p>
     </div>
     <span class="badge badge--platform">Linux</span>
@@ -26,7 +20,7 @@ A curated collection of quick commands, flags, tools, and utility references use
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="aria2c-command.md" class="writeup-row__title">aria2c Fast Downloader</a>
+      <a href="aria2c-command/" class="writeup-row__title">aria2c Fast Downloader</a>
       <p class="writeup-row__desc">High-speed multi-threaded download syntax, connection splitting, and chunk size configuration.</p>
     </div>
     <span class="badge badge--platform">CLI Tool</span>
@@ -36,7 +30,7 @@ A curated collection of quick commands, flags, tools, and utility references use
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="venv.md" class="writeup-row__title">Python venv Activation</a>
+      <a href="venv/" class="writeup-row__title">Python venv Activation</a>
       <p class="writeup-row__desc">Quick syntax for creating, activating, and exiting local Python virtual environments.</p>
     </div>
     <span class="badge badge--platform">Python</span>
