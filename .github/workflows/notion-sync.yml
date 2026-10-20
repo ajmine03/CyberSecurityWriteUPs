@@ -67,8 +67,8 @@ jobs:
       - name: Commit and push updates
         if: steps.check_changes.outputs.changes_detected == 'true' && github.event.inputs.dry_run != 'true'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Ajmine Adil"
+          git config user.email "ajmineadil@gmail.com"
           git add notion-content/ assets/notion/
           git commit -m "chore(sync): update writeups from Notion [skip ci]"
           git push origin main
