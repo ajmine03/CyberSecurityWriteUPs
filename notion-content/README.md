@@ -40,8 +40,8 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="headdump/" class="writeup-row__title">Head-dump</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for Head-dump.</p>
+      <a href="headdump/" class="writeup-row__title">Head Dump</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Head Dump.</p>
     </div>
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>
@@ -50,8 +50,8 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="intotheburp/" class="writeup-row__title">IntoTheBurp</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for IntoTheBurp.</p>
+      <a href="intotheburp/" class="writeup-row__title">Into The Burp</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Into The Burp.</p>
     </div>
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>
@@ -90,8 +90,8 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="nosanity/" class="writeup-row__title">n0s4n1ty 1</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for n0s4n1ty 1.</p>
+      <a href="webdecode/" class="writeup-row__title">Web Decode</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Web Decode.</p>
     </div>
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>
@@ -100,8 +100,8 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="webdecode/" class="writeup-row__title">web-decode</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for web-decode.</p>
+      <a href="nosanity/" class="writeup-row__title">n0s4n1ty 1</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for n0s4n1ty 1.</p>
     </div>
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>

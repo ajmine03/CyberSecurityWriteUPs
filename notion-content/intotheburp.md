@@ -1,5 +1,5 @@
 ---
-title: IntoTheBurp
+title: Into The Burp
 date: 2026-10-20
 platform: CyLab
 category: Web Exploitation
@@ -7,7 +7,7 @@ difficulty: Easy
 notion_id: 3ff8b5aa-2f8e-80cc-925e-e3b76873896b
 ---
 
-# IntoTheBurp
+# Into The Burp
 
 <div class="article-meta-badges">
   <span class="meta-badge meta-badge--platform"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg> CyLab</span>
