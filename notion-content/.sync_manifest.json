@@ -2,6 +2,8 @@
   "3ff8b5aa-2f8e-8000-8820-ec9c53382b7b": {
     "hash": "2edbeed80374e528f118fbdabd66f3eb3ef5e4cd9e17a9835a4a348a8be77fa8",
     "last_edited_time": "2026-10-20T20:18:00.000Z",
+    "path": "CyLab/webdecode.md",
+    "platform": "CyLab",
     "slug": "webdecode",
     "synced_at": "2026-10-20T20:19:22.346912+00:00",
     "title": "Web Decode"
@@ -9,6 +11,8 @@
   "3ff8b5aa-2f8e-800a-97f7-d833ee57490a": {
     "hash": "5df76aaed69d1de54cdf3c94ec1e6d4d781eb12e541ce23bc328024fd2008b40",
     "last_edited_time": "2026-10-20T20:13:00.000Z",
+    "path": "CyLab/localauthority.md",
+    "platform": "CyLab",
     "slug": "localauthority",
     "synced_at": "2026-10-20T20:15:24.153312+00:00",
     "title": "Local Authority"
@@ -16,6 +20,8 @@
   "3ff8b5aa-2f8e-800c-bee1-f52b56eb3b46": {
     "hash": "ef3242a4cc7e4a7507ab367b6e89966b5cac45e89cb3f533585adafde93f4bbb",
     "last_edited_time": "2026-10-20T20:18:00.000Z",
+    "path": "CyLab/headdump.md",
+    "platform": "CyLab",
     "slug": "headdump",
     "synced_at": "2026-10-20T20:19:22.095677+00:00",
     "title": "Head Dump"
@@ -23,6 +29,8 @@
   "3ff8b5aa-2f8e-800d-bed0-de4265d61ed0": {
     "hash": "f203431f83ac973e160aa3607bee821306680f8ac595d9ec209f922eebce5ab9",
     "last_edited_time": "2026-10-20T20:13:00.000Z",
+    "path": "CyLab/bookmarklet.md",
+    "platform": "CyLab",
     "slug": "bookmarklet",
     "synced_at": "2026-10-20T20:15:23.157178+00:00",
     "title": "Bookmarklet"
@@ -30,6 +38,8 @@
   "3ff8b5aa-2f8e-808b-b57e-d0eac22c1308": {
     "hash": "59331aa1a5a7685ef2778b1a5104128a456c2a013ab6844cf8019e7efc1b6b75",
     "last_edited_time": "2026-10-20T20:13:00.000Z",
+    "path": "CyLab/cookiemonstersecretrecipe.md",
+    "platform": "CyLab",
     "slug": "cookiemonstersecretrecipe",
     "synced_at": "2026-10-20T20:15:19.599502+00:00",
     "title": "Cookie Monster Secret Recipe"
@@ -37,6 +47,8 @@
   "3ff8b5aa-2f8e-8093-8fee-eb3d0a197352": {
     "hash": "cf5643f40facdde982e684ec2cc3b5868091c55a838487c976b88c57dfcc68a1",
     "last_edited_time": "2026-10-20T20:06:00.000Z",
+    "path": "CyLab/crack-the-gate-1.md",
+    "platform": "CyLab",
     "slug": "crack-the-gate-1",
     "synced_at": "2026-10-20T20:15:25.675648+00:00",
     "title": "Crack The Gate 1"
@@ -44,6 +56,8 @@
   "3ff8b5aa-2f8e-80b5-a94a-e07b87b76620": {
     "hash": "34571723cf0dec40933801ddf4f43da54dc31229dd6bcfb50457b9ace5c7485c",
     "last_edited_time": "2026-10-20T20:07:00.000Z",
+    "path": "CyLab/nosanity.md",
+    "platform": "CyLab",
     "slug": "nosanity",
     "synced_at": "2026-10-20T20:15:17.516277+00:00",
     "title": "n0s4n1ty 1"
@@ -51,6 +65,8 @@
   "3ff8b5aa-2f8e-80c8-b9be-f8813c2ec8b4": {
     "hash": "845f79f6e879dfa0455f762f0fdfef68adada60576214f002b9718f158cc9b4e",
     "last_edited_time": "2026-10-20T20:04:00.000Z",
+    "path": "CyLab/old-sessions.md",
+    "platform": "CyLab",
     "slug": "old-sessions",
     "synced_at": "2026-10-20T20:15:25.940588+00:00",
     "title": "Old Sessions"
@@ -58,6 +74,8 @@
   "3ff8b5aa-2f8e-80cc-925e-e3b76873896b": {
     "hash": "d41c684fd49eddef49976bef17f77e4887109ebcae54eca00d97b7d6f3bd9a38",
     "last_edited_time": "2026-10-20T20:18:00.000Z",
+    "path": "CyLab/intotheburp.md",
+    "platform": "CyLab",
     "slug": "intotheburp",
     "synced_at": "2026-10-20T20:19:22.593119+00:00",
     "title": "Into The Burp"
@@ -65,6 +83,8 @@
   "3ff8b5aa-2f8e-80e4-bfe5-cdadb6721390": {
     "hash": "18d6f2ebd21f165a4dcaadb9d1d6d974b387546b2251b95672c98b1997912c18",
     "last_edited_time": "2026-10-20T20:13:00.000Z",
+    "path": "CyLab/unminify.md",
+    "platform": "CyLab",
     "slug": "unminify",
     "synced_at": "2026-10-20T20:15:21.467357+00:00",
     "title": "Unminify"

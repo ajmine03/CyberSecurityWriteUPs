@@ -52,6 +52,14 @@ class TestNotionSyncUtils(unittest.TestCase):
     )
     self.assertEqual(slugify("   "), "untitled-writeup")
 
+  def test_sanitize_platform_name(self):
+    from notion_sync import sanitize_platform_name
+
+    self.assertEqual(sanitize_platform_name("CyLab"), "CyLab")
+    self.assertEqual(sanitize_platform_name("THM / TryHackMe"), "THM  TryHackMe")
+    self.assertEqual(sanitize_platform_name(""), "Other")
+    self.assertEqual(sanitize_platform_name(None), "Other")
+
 
 class TestNotionSyncClient(unittest.TestCase):
 
@@ -252,14 +260,23 @@ class TestNotionSyncClient(unittest.TestCase):
     self.assertTrue(res["has_changes"])
     self.assertEqual(res["published_count"], 1)
 
-    # Verify writeup markdown file exists
-    writeup_file = self.output_dir / "based-challenge.md"
+    # Verify writeup markdown file exists under platform subdirectory
+    writeup_file = self.output_dir / "picoCTF" / "based-challenge.md"
     self.assertTrue(writeup_file.exists())
     content = writeup_file.read_text()
     self.assertIn("title: Based Challenge", content)
     self.assertIn("Convert binary into ASCII.", content)
 
-    # Verify README catalog was generated
+    # Verify platform README and .pages were generated
+    platform_readme = self.output_dir / "picoCTF" / "README.md"
+    self.assertTrue(platform_readme.exists())
+    self.assertIn("picoCTF Writeups", platform_readme.read_text())
+
+    platform_pages = self.output_dir / "picoCTF" / ".pages"
+    self.assertTrue(platform_pages.exists())
+    self.assertIn("title: picoCTF", platform_pages.read_text())
+
+    # Verify global README catalog was generated
     readme_file = self.output_dir / "README.md"
     self.assertTrue(readme_file.exists())
     self.assertIn("Based Challenge", readme_file.read_text())

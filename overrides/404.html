@@ -4,12 +4,17 @@
 <script>
   (function() {
     var path = window.location.pathname;
-    // Check if the 404 URL ends with .md or .md/
-    var match = path.match(/^(.*)\.md(\/)?$/i);
-    if (match) {
-      var cleanPath = match[1] + '/';
-      var target = cleanPath + window.location.search + window.location.hash;
-      window.location.replace(target);
+    var mdMatch = path.match(/^(.*)\.md(\/)?$/i);
+    if (mdMatch) {
+      path = mdMatch[1] + '/';
+    }
+    if (path.indexOf('/notion-content/') !== -1) {
+      path = path.replace('/notion-content/', '/CyLab/');
+      window.location.replace(path + window.location.search + window.location.hash);
+      return;
+    }
+    if (mdMatch) {
+      window.location.replace(path + window.location.search + window.location.hash);
     }
   })();
 </script>
@@ -19,11 +24,17 @@
 <script>
   (function() {
     var path = window.location.pathname;
-    var match = path.match(/^(.*)\.md(\/)?$/i);
-    if (match) {
-      var cleanPath = match[1] + '/';
-      var target = cleanPath + window.location.search + window.location.hash;
-      window.location.replace(target);
+    var mdMatch = path.match(/^(.*)\.md(\/)?$/i);
+    if (mdMatch) {
+      path = mdMatch[1] + '/';
+    }
+    if (path.indexOf('/notion-content/') !== -1) {
+      path = path.replace('/notion-content/', '/CyLab/');
+      window.location.replace(path + window.location.search + window.location.hash);
+      return;
+    }
+    if (mdMatch) {
+      window.location.replace(path + window.location.search + window.location.hash);
     }
   })();
 </script>

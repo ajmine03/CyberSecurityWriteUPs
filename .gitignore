@@ -2,6 +2,7 @@
 site/
 site_output/
 _site/
+scratch/
 
 # Python virtual environments & bytecode
 venv/

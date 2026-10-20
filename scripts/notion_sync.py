@@ -9,6 +9,7 @@ images into local assets, and maintains a clean listing table.
 from __future__ import annotations
 
 import argparse
+import collections
 import hashlib
 import json
 import os
@@ -58,6 +59,15 @@ def slugify(text: str) -> str:
   text = re.sub(r"[\s_-]+", "-", text)
   slug = text.strip("-")
   return slug or "untitled-writeup"
+
+
+def sanitize_platform_name(name: Optional[str]) -> str:
+  """Sanitizes platform name for directory naming while preserving display casing."""
+  name = (name or "").strip()
+  if not name:
+    return "Other"
+  name = re.sub(r'[\\/*?:"<>|]', "", name).strip()
+  return name or "Other"
 
 
 class NotionSyncClient:
@@ -644,9 +654,10 @@ notion_id: {meta['id']}
       elif "hard" in d_lower:
         badge_class = "badge--hard"
 
+      plat = sanitize_platform_name(p.get("platform"))
       row = f"""  <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="{p['slug']}/" class="writeup-row__title">{p['title']}</a>
+      <a href="{plat}/{p['slug']}/" class="writeup-row__title">{p['title']}</a>
       <p class="writeup-row__desc">{p['description']}</p>
     </div>
     <span class="badge badge--platform">{p['platform']}</span>
@@ -681,6 +692,128 @@ notion_id: {meta['id']}
 {rows_str}
 </div>
 """
+
+  def generate_platform_readme(self, platform_name: str, pages: List[Dict[str, Any]]) -> str:
+    """Generates the notion-content/{platform}/README.md catalog table."""
+    rows_html = []
+    for p in sorted(pages, key=lambda x: x["title"]):
+      d_lower = p["difficulty"].lower()
+      badge_class = "badge--medium"
+      if "easy" in d_lower:
+        badge_class = "badge--easy"
+      elif "hard" in d_lower:
+        badge_class = "badge--hard"
+
+      date_str = p.get("date") or ""
+      date_badge = f'<span class="badge badge--date">{date_str}</span>' if date_str else ""
+      desc_str = p.get("description") or f"{p['category']} challenge on {platform_name}."
+
+      row = f"""  <div class="writeup-row">
+    <div class="writeup-row__main">
+      <a href="{p['slug']}/" class="writeup-row__title">{p['title']}</a>
+      <p class="writeup-row__desc">{desc_str}</p>
+    </div>
+    <span class="badge badge--category">{p['category']}</span>
+    <span class="badge {badge_class}"><span class="badge-dot"></span>{p['difficulty']}</span>
+    {date_badge}
+  </div>"""
+      rows_html.append(row)
+
+    if not rows_html:
+      rows_html.append(f"""  <div class="writeup-row">
+    <div class="writeup-row__main">
+      <span class="writeup-row__title" style="color: var(--terminal-text-muted);">No {platform_name} Writeups Yet</span>
+      <p class="writeup-row__desc">Published writeups tagged with Platform = '{platform_name}' will appear here.</p>
+    </div>
+  </div>""")
+
+    rows_str = "\n\n".join(rows_html)
+
+    return f"""# {platform_name} Writeups
+
+<div class="platform-overview-hero">
+  <div class="terminal-badge"><span class="terminal-dot"></span> PLATFORM ARCHIVE</div>
+  <p class="platform-overview-desc">Comprehensive challenge walkthroughs and methodology documentation for {platform_name} cybersecurity challenges.</p>
+</div>
+
+<div class="writeup-listing">
+  <div class="writeup-listing__header">
+    <span class="writeup-listing__col--title">Challenge</span>
+    <span class="writeup-listing__col--category">Category</span>
+    <span class="writeup-listing__col--difficulty">Difficulty</span>
+    <span class="writeup-listing__col--date">Date</span>
+  </div>
+
+{rows_str}
+</div>
+"""
+
+  def update_homepage_recent_writeups(self, synced_pages: List[Dict[str, Any]]) -> None:
+    """Updates the published writeups listing in index.md with latest writeups."""
+    index_path = self.output_dir.parent / "index.md"
+    if not index_path.exists():
+      return
+
+    # Sort pages by date descending, then title
+    sorted_pages = sorted(
+        synced_pages,
+        key=lambda x: (x.get("date") or "", x.get("title") or ""),
+        reverse=True,
+    )
+
+    rows_html = []
+    for p in sorted_pages:
+      d_lower = p["difficulty"].lower()
+      badge_class = "badge--medium"
+      if "easy" in d_lower:
+        badge_class = "badge--easy"
+      elif "hard" in d_lower:
+        badge_class = "badge--hard"
+
+      plat = sanitize_platform_name(p.get("platform"))
+      slug = p["slug"]
+      desc = p.get("description") or f"{p['category']} challenge solution and methodology walkthrough."
+
+      row = f"""  <div class="writeup-row">
+    <div class="writeup-row__main">
+      <a href="{plat}/{slug}/" class="writeup-row__title">{p['title']}</a>
+      <p class="writeup-row__desc">{desc}</p>
+    </div>
+    <span class="badge badge--platform">{p['platform']}</span>
+    <span class="badge badge--category">{p['category']}</span>
+    <span class="badge {badge_class}"><span class="badge-dot"></span>{p['difficulty']}</span>
+  </div>"""
+      rows_html.append(row)
+
+    rows_str = "\n\n".join(rows_html)
+    new_block = f"""<!-- RECENT_WRITEUPS_START -->
+<div class="writeup-listing">
+  <div class="writeup-listing__header">
+    <span class="writeup-listing__col--title">Writeup / Topic</span>
+    <span class="writeup-listing__col--platform">Platform</span>
+    <span class="writeup-listing__col--category">Category</span>
+    <span class="writeup-listing__col--difficulty">Difficulty</span>
+  </div>
+
+{rows_str}
+</div>
+<!-- RECENT_WRITEUPS_END -->"""
+
+    content = index_path.read_text(encoding="utf-8")
+    if "<!-- RECENT_WRITEUPS_START -->" in content and "<!-- RECENT_WRITEUPS_END -->" in content:
+      pattern = r"<!-- RECENT_WRITEUPS_START -->.*?<!-- RECENT_WRITEUPS_END -->"
+      updated_content = re.sub(pattern, new_block, content, flags=re.DOTALL)
+    elif '<div class="writeup-listing">' in content:
+      pattern = r'<div class="writeup-listing">.*?</div>\s*(?=\n---|\Z)'
+      updated_content = re.sub(pattern, new_block + "\n", content, flags=re.DOTALL)
+    else:
+      return
+
+    if updated_content.strip() != content.strip() and not self.dry_run:
+      index_path.write_text(updated_content, encoding="utf-8")
+      if str(index_path) not in self.files_modified:
+        self.files_modified.append(str(index_path))
+      print("Updated homepage recent writeups in index.md.")
 
   def sync(self) -> Dict[str, Any]:
     """Main synchronization execution loop."""
@@ -718,21 +851,37 @@ notion_id: {meta['id']}
         meta["slug"] = slug
       used_slugs[slug] = page_id
 
-      target_file = self.output_dir / f"{slug}.md"
+      platform_name = sanitize_platform_name(meta.get("platform"))
+      platform_dir = self.output_dir / platform_name
+      platform_dir.mkdir(parents=True, exist_ok=True)
+
+      target_file = platform_dir / f"{slug}.md"
+      rel_target_path = f"{platform_name}/{slug}.md"
 
       # Check manifest to determine if re-download is needed
       cached = self.manifest.get(page_id)
+      cached_path = cached.get("path") if cached else None
+      if not cached_path and cached:
+        cached_path = f"{cached.get('platform', platform_name)}/{cached.get('slug', slug)}.md"
+      cached_file = self.output_dir / cached_path if cached_path else None
+
       if (
           cached
           and cached.get("last_edited_time") == meta["last_edited_time"]
-          and target_file.exists()
+          and cached_file
+          and cached_file.exists()
           and cached.get("slug") == slug
+          and cached.get("platform") == platform_name
       ):
         # Page is unchanged
         synced_meta_list.append(meta)
         continue
 
-      print(f"Syncing: '{meta['title']}' -> notion-content/{slug}.md")
+      # If file moved to another platform, remove old file
+      if cached_file and cached_file.exists() and cached_file != target_file and not self.dry_run:
+        cached_file.unlink()
+
+      print(f"Syncing: '{meta['title']}' -> notion-content/{platform_name}/{slug}.md")
       blocks = self.get_block_children(page_id)
       body_md = self.convert_blocks_to_markdown(blocks, slug)
       full_md = self.build_page_markdown(meta, body_md)
@@ -746,6 +895,8 @@ notion_id: {meta['id']}
         self.manifest[page_id] = {
             "slug": slug,
             "title": meta["title"],
+            "platform": platform_name,
+            "path": rel_target_path,
             "last_edited_time": meta["last_edited_time"],
             "hash": content_hash,
             "synced_at": datetime.now(timezone.utc).isoformat(),
@@ -762,17 +913,42 @@ notion_id: {meta['id']}
     to_delete = []
     for cached_id, info in list(self.manifest.items()):
       if cached_id not in seen_page_ids:
-        cached_slug = info.get("slug")
-        if cached_slug:
-          orphan_file = self.output_dir / f"{cached_slug}.md"
-          if orphan_file.exists() and not self.dry_run:
-            orphan_file.unlink()
-            self.files_deleted.append(str(orphan_file))
-            print(f"Removed unpublished writeup: {orphan_file}")
+        cached_path = info.get("path") or f"{info.get('slug')}.md"
+        orphan_file = self.output_dir / cached_path
+        if orphan_file.exists() and not self.dry_run:
+          orphan_file.unlink()
+          self.files_deleted.append(str(orphan_file))
+          print(f"Removed unpublished writeup: {orphan_file}")
         to_delete.append(cached_id)
 
     for pid in to_delete:
       del self.manifest[pid]
+
+    # Group by platform
+    pages_by_platform: Dict[str, List[Dict[str, Any]]] = collections.defaultdict(list)
+    for m in synced_meta_list:
+      p_name = sanitize_platform_name(m.get("platform"))
+      pages_by_platform[p_name].append(m)
+
+    # Generate README.md and .pages for each platform
+    for p_name, p_pages in pages_by_platform.items():
+      p_dir = self.output_dir / p_name
+      if not self.dry_run:
+        p_dir.mkdir(parents=True, exist_ok=True)
+        # 1. Platform .pages
+        p_pages_file = p_dir / ".pages"
+        pages_content = f"title: {p_name}\narrange:\n  - README.md\n  - \"...\"\n"
+        if not p_pages_file.exists() or p_pages_file.read_text(encoding="utf-8").strip() != pages_content.strip():
+          p_pages_file.write_text(pages_content, encoding="utf-8")
+
+        # 2. Platform README.md
+        p_readme = p_dir / "README.md"
+        p_readme_content = self.generate_platform_readme(p_name, p_pages)
+        if not p_readme.exists() or p_readme.read_text(encoding="utf-8").strip() != p_readme_content.strip():
+          p_readme.write_text(p_readme_content, encoding="utf-8")
+
+    # Update homepage recent writeups
+    self.update_homepage_recent_writeups(synced_meta_list)
 
     # Update notion-content/README.md catalog
     readme_path = self.output_dir / "README.md"
