@@ -1,3 +1,7 @@
+---
+title: aria2c
+---
+
 # aria2c Fast Download Command
 
 High-speed multi-connection download command reference.

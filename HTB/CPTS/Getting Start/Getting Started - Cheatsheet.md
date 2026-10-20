@@ -1,3 +1,7 @@
+---
+title: Getting Started
+---
+
 # HTB CPTS: Getting Started Cheatsheet
 
 Official reference cheatsheet for the Hack The Box Certified Penetration Testing Specialist (CPTS) **Getting Started** module.
@@ -33,7 +37,7 @@ If your browser supports inline PDF viewing, you can review the document directl
 
 ## Related Notes in this Module
 
-* [HTB Service Enumeration Commands](HTB_Service_Enumeration_Command.md)
-* [Nmap Scanning on HTB](Nmap_HTB.md)
-* [Public Exploits Guide](Public%20Exploits.md)
-* [Web Enumeration Overview](Web_Enumeration/Web%20Enumeration.md)
+* [HTB Service Enumeration Commands](../HTB_Service_Enumeration_Command/)
+* [Nmap Scanning on HTB](../Nmap_HTB/)
+* [Public Exploits Guide](../Public%20Exploits/)
+* [Web Enumeration Overview](Web_Enumeration/)

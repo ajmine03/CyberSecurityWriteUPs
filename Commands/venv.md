@@ -1,3 +1,7 @@
+---
+title: venv
+---
+
 # Python Virtual Environment Activation
 
 Quick command reference for activating a local Python virtual environment.

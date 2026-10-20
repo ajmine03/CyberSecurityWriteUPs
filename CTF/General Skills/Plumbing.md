@@ -1,3 +1,7 @@
+---
+title: Plumbing
+---
+
 # Plumbing — picoCTF Writeup
 
 **Category:** General Skills

@@ -1,3 +1,7 @@
+---
+title: SQLMap Basics
+---
+
 # TryHackMe — SQLMap: The Basics
 
 > **Path:** Cyber Security 101 → Offensive Security Tooling  

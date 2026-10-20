@@ -1,3 +1,7 @@
+---
+title: Blue
+---
+
 # TryHackMe Blue
 
 ## Overview

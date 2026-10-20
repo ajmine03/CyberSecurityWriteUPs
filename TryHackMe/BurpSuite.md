@@ -1,3 +1,7 @@
+---
+title: Burp Suite
+---
+
 # Burp Suite: The Basics
 
 ## Platform

@@ -1,3 +1,7 @@
+---
+title: apt
+---
+
 # APT
 
 ## এই Section-এ APT-এর ব্যবহার

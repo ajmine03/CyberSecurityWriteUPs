@@ -1,3 +1,7 @@
+---
+title: JavaScript Essentials
+---
+
 # JavaScript Essentials
 
 ## Platform

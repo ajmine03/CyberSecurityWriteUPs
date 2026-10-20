@@ -42,7 +42,7 @@ hide:
 
     picoCTF General Skills, encoding, and piping.
 
-    [Browse CTF :octicons-arrow-right-24:](CTF/README.md)
+    [Browse CTF :octicons-arrow-right-24:](CTF/)
 
 -   __Hack The Box__
 
@@ -50,7 +50,7 @@ hide:
 
     CPTS methodology, service and web enumeration.
 
-    [Browse HTB :octicons-arrow-right-24:](HTB/README.md)
+    [Browse HTB :octicons-arrow-right-24:](HTB/)
 
 -   __TryHackMe__
 
@@ -58,7 +58,7 @@ hide:
 
     Room walkthroughs, CVE analysis, and tooling.
 
-    [Browse THM :octicons-arrow-right-24:](TryHackMe/README.md)
+    [Browse THM :octicons-arrow-right-24:](TryHackMe/)
 
 -   __Commands__
 
@@ -66,7 +66,7 @@ hide:
 
     Cheatsheets for `chmod`, `aria2c`, and `venv`.
 
-    [Browse Commands :octicons-arrow-right-24:](Commands/README.md)
+    [Browse Commands :octicons-arrow-right-24:](Commands/)
 
 </div>
 

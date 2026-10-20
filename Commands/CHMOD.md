@@ -1,3 +1,7 @@
+---
+title: chmod
+---
+
 # Linux `chmod` Command
 
 ## 1. Introduction

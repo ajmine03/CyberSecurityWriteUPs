@@ -1,3 +1,7 @@
+---
+title: git
+---
+
 # git
 
 ## এই Section-এ `git` কেন?

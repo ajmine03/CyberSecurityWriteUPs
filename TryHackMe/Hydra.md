@@ -1,3 +1,7 @@
+---
+title: Hydra
+---
+
 # Hydra
 
 ## Platform

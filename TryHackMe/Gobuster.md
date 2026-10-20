@@ -1,3 +1,7 @@
+---
+title: Gobuster
+---
+
 # TryHackMe — Gobuster: The Basics
 
 > **Path:** Cyber Security 101 → Offensive Security Tooling  

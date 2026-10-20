@@ -1,3 +1,7 @@
+---
+title: mus1c
+---
+
 # mus1c — picoCTF 2019 Writeup
 
 **Category:** General Skills (Medium)  

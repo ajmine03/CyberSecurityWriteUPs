@@ -1,0 +1,45 @@
+{% extends "main.html" %}
+
+{% block extrahead %}
+<script>
+  (function() {
+    var path = window.location.pathname;
+    // Check if the 404 URL ends with .md or .md/
+    var match = path.match(/^(.*)\.md(\/)?$/i);
+    if (match) {
+      var cleanPath = match[1] + '/';
+      var target = cleanPath + window.location.search + window.location.hash;
+      window.location.replace(target);
+    }
+  })();
+</script>
+{% endblock %}
+
+{% block content %}
+<script>
+  (function() {
+    var path = window.location.pathname;
+    var match = path.match(/^(.*)\.md(\/)?$/i);
+    if (match) {
+      var cleanPath = match[1] + '/';
+      var target = cleanPath + window.location.search + window.location.hash;
+      window.location.replace(target);
+    }
+  })();
+</script>
+
+<div style="padding: 3rem 1rem; text-align: center; max-width: 600px; margin: 0 auto;">
+  <div style="display: inline-flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 12px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.25); color: #22c55e; margin-bottom: 1.25rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+    </svg>
+  </div>
+  <h1 style="font-size: 1.6rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.5rem; letter-spacing: -0.02em;">404 — Document Not Found</h1>
+  <p style="color: var(--terminal-text-muted); margin-bottom: 1.5rem; font-size: 0.88rem; line-height: 1.6;">The requested writeup or page was moved, renamed, or does not exist.</p>
+  <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" class="md-button md-button--primary" style="font-size: 0.85rem; padding: 0.5rem 1.2rem;">
+    Return to Knowledge Base
+  </a>
+</div>
+{% endblock %}

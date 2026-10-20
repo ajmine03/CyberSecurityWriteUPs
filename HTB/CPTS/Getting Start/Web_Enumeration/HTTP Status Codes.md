@@ -1,3 +1,7 @@
+---
+title: HTTP Status Codes
+---
+
 # HTTP Status Codes
 
 Web enumeration-এর output বুঝতে HTTP status code জানা গুরুত্বপূর্ণ।

@@ -1,3 +1,7 @@
+---
+title: ffuf
+---
+
 # ffuf
 
 ## কী?

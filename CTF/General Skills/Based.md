@@ -1,3 +1,7 @@
+---
+title: Based
+---
+
 # Based — picoCTF 2019 Writeup
 
 <div class="article-meta-badges">

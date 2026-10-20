@@ -1,3 +1,7 @@
+---
+title: Nmap Scanning
+---
+
 # Nmap Quick README — HTB
 
 > **Goal:** Nmap-এর দরকারি command এক নজরে দেখা। Theory কম, command + কাজ + কখন ব্যবহার করবে বেশি।

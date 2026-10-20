@@ -1,3 +1,7 @@
+---
+title: Web App Basics
+---
+
 # Web Application Basics
 
 ## Platform

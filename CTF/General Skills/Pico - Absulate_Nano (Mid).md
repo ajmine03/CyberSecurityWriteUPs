@@ -1,3 +1,7 @@
+---
+title: Absolute Nano
+---
+
 # ABSOLUTE NANO — picoCTF 2026
 
 **Category:** General Skills (Medium)  
