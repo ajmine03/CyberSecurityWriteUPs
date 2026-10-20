@@ -20,6 +20,7 @@ def on_pre_build(config):
       'HTB',
       'TryHackMe',
       'Commands',
+      'notion-content',
       'index.md',
       'assets',
       '.pages',

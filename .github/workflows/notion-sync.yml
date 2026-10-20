@@ -1,0 +1,82 @@
+name: Notion to GitHub Writeup Sync
+
+on:
+  schedule:
+    # Daily at midnight Bangladesh Standard Time (BST = UTC+6), which is 18:00 UTC
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (test query and conversion without committing changes)"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: "notion-sync"
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Sync Published Writeups from Notion
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Notion Synchronizer
+        id: sync
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: |
+          DRY_RUN_FLAG=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            DRY_RUN_FLAG="--dry-run"
+          fi
+          python scripts/notion_sync.py $DRY_RUN_FLAG
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [ -n "$(git status --porcelain notion-content/ assets/notion/)" ]; then
+            echo "changes_detected=true" >> "$GITHUB_OUTPUT"
+            echo "Detected updates in notion-content/ or assets/notion/"
+          else
+            echo "changes_detected=false" >> "$GITHUB_OUTPUT"
+            echo "No writeup changes detected. Repository is up to date."
+          fi
+
+      - name: Commit and push updates
+        if: steps.check_changes.outputs.changes_detected == 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add notion-content/ assets/notion/
+          git commit -m "chore(sync): update writeups from Notion [skip ci]"
+          git push origin main
+
+      - name: Trigger documentation deployment
+        if: steps.check_changes.outputs.changes_detected == 'true' && github.event.inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Dispatching deploy.yml workflow to publish updated writeups..."
+          gh workflow run deploy.yml --ref main || echo "Deploy workflow dispatch triggered or queued."
