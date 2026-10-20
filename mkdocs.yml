@@ -14,9 +14,10 @@ hooks:
 
 theme:
   name: material
+  custom_dir: overrides
+  logo: assets/logo.svg
   language: en
   icon:
-    logo: fontawesome/solid/terminal
     repo: fontawesome/brands/github
   palette:
     # Terminal Dark Theme (Default)
