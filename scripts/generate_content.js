@@ -125,29 +125,15 @@ if (fs.existsSync(notionContentDir)) {
   }
 }
 
-// Add THM and Try Hack Me placeholders
-const existingPlatNames = platforms.map(p => p.name.toLowerCase());
-if (!existingPlatNames.includes('thm')) {
-  platforms.push({
-    name: 'THM',
-    slug: 'thm',
-    description: 'TryHackMe rooms, challenges and methodology notes.',
-    count: 0
-  });
-}
-if (!existingPlatNames.includes('try hack me')) {
-  platforms.push({
-    name: 'Try Hack Me',
-    slug: 'try-hack-me',
-    description: 'Practical lab walkthroughs and tooling guides.',
-    count: 0
-  });
-}
+// Only include platforms that actually have writeups from Notion
+const validPlatforms = platforms.filter(p => p.count > 0);
 
 const outputData = {
-  platforms,
+  platforms: validPlatforms,
   writeups,
 };
 
 fs.writeFileSync(outputFile, JSON.stringify(outputData, null, 2), 'utf-8');
-console.log(`Successfully generated content: ${platforms.length} platforms, ${writeups.length} writeups.`);
+console.log(`Successfully generated content: ${validPlatforms.length} platforms, ${writeups.length} writeups.`);
+
+
