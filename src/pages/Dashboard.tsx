@@ -205,9 +205,9 @@ export const Dashboard: React.FC<DashboardProps> = ({
               onChange={(e) => setSelectedTag(e.target.value)}
               className={`w-full appearance-none bg-[#111726] text-xs px-3 py-2 pr-8 rounded-lg border transition cursor-pointer ${
                 selectedTag !== 'All Tags'
-                  ? 'border-amber-400/50 text-amber-300 font-medium'
-                  : 'border-white/[0.08] text-slate-200'
-              } focus:outline-none focus:border-amber-400/60`}
+                  ? 'border-amber-400/50 text-amber-300 font-medium focus:border-amber-400'
+                  : 'border-white/[0.08] text-slate-200 focus:border-emerald-500/50'
+              } focus:outline-none`}
             >
               {tagOptions.map((t) => (
                 <option key={t} value={t}>
