@@ -114,17 +114,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
   ]);
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
+    <div className="flex-1 overflow-y-auto p-3 sm:p-5 lg:p-8 w-full min-w-0">
       {/* Main Content Isolated Panel (Matching Image 1) */}
-      <div className="max-w-5xl mx-auto rounded-xl border border-white/[0.08] bg-[#0d111a] p-6 lg:p-8 shadow-xl shadow-black/40">
+      <div className="max-w-5xl mx-auto rounded-xl border border-white/[0.08] bg-[#0d111a] p-3.5 sm:p-6 lg:p-8 shadow-xl shadow-black/40">
         {/* Title & Platform Archive Badge */}
-        <div className="space-y-3 mb-6">
-          <h1 className="text-2xl lg:text-3xl font-bold tracking-tight text-white">
+        <div className="space-y-2.5 sm:space-y-3 mb-4 sm:mb-6">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white">
             {platform.name} Writeups
           </h1>
 
-          <div className="flex items-center gap-2.5 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               Platform Archive
             </span>
@@ -135,7 +135,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 onClick={() =>
                   setSelectedTag(selectedTag === '⚡ Tagged Only' ? 'All Tags' : '⚡ Tagged Only')
                 }
-                className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider transition ${
+                className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition ${
                   selectedTag === '⚡ Tagged Only'
                     ? 'bg-amber-400/20 text-amber-300 border border-amber-400/50 ring-1 ring-amber-400/30'
                     : 'bg-amber-400/10 text-amber-300/80 hover:text-amber-300 border border-amber-400/25 hover:border-amber-400/40'
@@ -163,13 +163,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
             )}
           </div>
 
-          <p className="text-sm text-slate-400 max-w-2xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-400 max-w-2xl leading-relaxed">
             {platform.description}
           </p>
         </div>
 
         {/* Filter Controls Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 sm:gap-3 mb-4 sm:mb-6">
           {/* Search challenges input */}
           <div className="relative flex items-center lg:col-span-1">
             <Search className="absolute left-3 w-4 h-4 text-slate-500" />
@@ -252,15 +252,15 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
 
         {/* Challenges Table */}
-        <div className="overflow-x-auto rounded-lg border border-white/[0.06] bg-[#0a0d14]">
-          <table className="w-full text-left border-collapse">
+        <div className="overflow-x-auto rounded-lg border border-white/[0.06] bg-[#0a0d14] -mx-0.5 sm:mx-0">
+          <table className="w-full text-left border-collapse min-w-[320px]">
             <thead>
-              <tr className="border-b border-white/[0.06] text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                <th className="py-3 px-4">Challenge</th>
-                <th className="py-3 px-4 hidden sm:table-cell">Category</th>
-                <th className="py-3 px-4">Difficulty</th>
-                <th className="py-3 px-4 hidden md:table-cell">Date</th>
-                <th className="py-3 px-4 text-right"></th>
+              <tr className="border-b border-white/[0.06] text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                <th className="py-2.5 sm:py-3 px-3 sm:px-4">Challenge</th>
+                <th className="py-2.5 sm:py-3 px-3 sm:px-4 hidden sm:table-cell">Category</th>
+                <th className="py-2.5 sm:py-3 px-2 sm:px-4">Difficulty</th>
+                <th className="py-2.5 sm:py-3 px-3 sm:px-4 hidden md:table-cell">Date</th>
+                <th className="py-2.5 sm:py-3 px-2 sm:px-4 text-right"></th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/[0.04]">
@@ -272,9 +272,9 @@ export const Dashboard: React.FC<DashboardProps> = ({
                     className="group hover:bg-white/[0.03] cursor-pointer transition"
                   >
                     {/* Challenge Title + Optional Tag Highlight Badge */}
-                    <td className="py-3.5 px-4 font-semibold text-sm text-slate-200 group-hover:text-emerald-400 transition">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span>{w.title}</span>
+                    <td className="py-2.5 sm:py-3.5 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-slate-200 group-hover:text-emerald-400 transition">
+                      <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                        <span className="leading-snug">{w.title}</span>
                         {w.tags &&
                           w.tags.map((tag) => (
                             <span
@@ -284,7 +284,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                                 setSelectedTag(tag);
                               }}
                               title={`Click to filter by tag: ${tag}`}
-                              className="inline-flex items-center gap-1 text-[11px] font-mono font-semibold px-2 py-0.5 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/35 hover:bg-amber-400/25 transition shadow-sm shadow-amber-500/10 shrink-0 cursor-pointer"
+                              className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-mono font-semibold px-1.5 sm:px-2 py-0.5 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/35 hover:bg-amber-400/25 transition shadow-sm shadow-amber-500/10 shrink-0 cursor-pointer"
                             >
                               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
                               {tag}
@@ -293,28 +293,28 @@ export const Dashboard: React.FC<DashboardProps> = ({
                       </div>
                     </td>
 
-                    {/* Category */}
-                    <td className="py-3.5 px-4 hidden sm:table-cell">
+                    {/* Category (Hidden on small mobile) */}
+                    <td className="py-2.5 sm:py-3.5 px-3 sm:px-4 hidden sm:table-cell">
                       <span className="text-xs text-slate-400 px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">
                         {w.category}
                       </span>
                     </td>
 
                     {/* Difficulty */}
-                    <td className="py-3.5 px-4">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <td className="py-2.5 sm:py-3.5 px-2 sm:px-4 whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-medium px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                         {w.difficulty}
                       </span>
                     </td>
 
-                    {/* Date */}
-                    <td className="py-3.5 px-4 text-xs font-mono text-slate-500 hidden md:table-cell">
+                    {/* Date (Hidden on mobile) */}
+                    <td className="py-2.5 sm:py-3.5 px-3 sm:px-4 text-xs font-mono text-slate-500 hidden md:table-cell whitespace-nowrap">
                       {w.date}
                     </td>
 
                     {/* Action Arrow */}
-                    <td className="py-3.5 px-4 text-right">
+                    <td className="py-2.5 sm:py-3.5 px-2 sm:px-4 text-right">
                       <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition inline-block" />
                     </td>
                   </tr>
@@ -323,7 +323,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <tr>
                   <td
                     colSpan={5}
-                    className="py-12 text-center text-sm text-slate-500"
+                    className="py-10 text-center text-xs sm:text-sm text-slate-500"
                   >
                     No challenges found matching your filters.
                   </td>

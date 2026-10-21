@@ -21,6 +21,7 @@ const AppLayout: React.FC = () => {
   const [isLeftCollapsed, setIsLeftCollapsed] = useState<boolean>(() => {
     return localStorage.getItem('sidebar-left-collapsed') === 'true';
   });
+  const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
   const [globalSearch, setGlobalSearch] = useState<string>('');
 
   const handleToggleLeft = (collapsed: boolean) => {
@@ -29,15 +30,16 @@ const AppLayout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0f17] text-slate-200 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#0b0f17] text-slate-200 flex flex-col font-sans overflow-x-hidden">
       {/* Top Header */}
       <Header
         searchQuery={globalSearch}
         setSearchQuery={setGlobalSearch}
+        onToggleMobileMenu={() => setIsMobileOpen((prev) => !prev)}
       />
 
       {/* Main Body */}
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex overflow-hidden relative">
         <Routes>
           <Route
             path="/"
@@ -49,6 +51,8 @@ const AppLayout: React.FC = () => {
               <PlatformRoute
                 isLeftCollapsed={isLeftCollapsed}
                 setIsLeftCollapsed={handleToggleLeft}
+                isMobileOpen={isMobileOpen}
+                setIsMobileOpen={setIsMobileOpen}
                 globalSearch={globalSearch}
               />
             }
@@ -59,6 +63,8 @@ const AppLayout: React.FC = () => {
               <WriteupRoute
                 isLeftCollapsed={isLeftCollapsed}
                 setIsLeftCollapsed={handleToggleLeft}
+                isMobileOpen={isMobileOpen}
+                setIsMobileOpen={setIsMobileOpen}
               />
             }
           />
@@ -76,8 +82,16 @@ const AppLayout: React.FC = () => {
 const PlatformRoute: React.FC<{
   isLeftCollapsed: boolean;
   setIsLeftCollapsed: (collapsed: boolean) => void;
+  isMobileOpen: boolean;
+  setIsMobileOpen: (open: boolean) => void;
   globalSearch: string;
-}> = ({ isLeftCollapsed, setIsLeftCollapsed, globalSearch }) => {
+}> = ({
+  isLeftCollapsed,
+  setIsLeftCollapsed,
+  isMobileOpen,
+  setIsMobileOpen,
+  globalSearch,
+}) => {
   const { platform: rawPlatformSlug } = useParams<{ platform: string }>();
   const platformSlug = rawPlatformSlug?.toLowerCase() || 'cylab';
 
@@ -95,6 +109,8 @@ const PlatformRoute: React.FC<{
       <LeftSidebar
         isCollapsed={isLeftCollapsed}
         setIsCollapsed={setIsLeftCollapsed}
+        isMobileOpen={isMobileOpen}
+        setIsMobileOpen={setIsMobileOpen}
         platforms={data.platforms}
         writeups={data.writeups}
         activePlatformSlug={currentPlatform.slug}
@@ -118,7 +134,14 @@ const PlatformRoute: React.FC<{
 const WriteupRoute: React.FC<{
   isLeftCollapsed: boolean;
   setIsLeftCollapsed: (collapsed: boolean) => void;
-}> = ({ isLeftCollapsed, setIsLeftCollapsed }) => {
+  isMobileOpen: boolean;
+  setIsMobileOpen: (open: boolean) => void;
+}> = ({
+  isLeftCollapsed,
+  setIsLeftCollapsed,
+  isMobileOpen,
+  setIsMobileOpen,
+}) => {
   const { platform: rawPlatformSlug } = useParams<{ platform: string }>();
   const platformSlug = rawPlatformSlug?.toLowerCase() || 'cylab';
 
@@ -131,6 +154,8 @@ const WriteupRoute: React.FC<{
       <LeftSidebar
         isCollapsed={isLeftCollapsed}
         setIsCollapsed={setIsLeftCollapsed}
+        isMobileOpen={isMobileOpen}
+        setIsMobileOpen={setIsMobileOpen}
         platforms={data.platforms}
         writeups={data.writeups}
         activePlatformSlug={platformSlug}

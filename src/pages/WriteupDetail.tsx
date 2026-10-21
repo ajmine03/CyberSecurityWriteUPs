@@ -89,11 +89,11 @@ export const WriteupDetail: React.FC<WriteupDetailProps> = ({
   const baseAssetUrl = import.meta.env.BASE_URL || '/';
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
+    <div className="flex-1 overflow-y-auto w-full min-w-0 p-3 sm:p-5 lg:p-8">
       {/* 3. Main content enclosed in a dedicated separate panel card */}
-      <article className="max-w-4xl mx-auto rounded-xl border border-white/[0.08] bg-[#0d111a] p-6 lg:p-10 shadow-xl shadow-black/40">
+      <article className="w-full min-w-0 max-w-4xl mx-auto rounded-xl border border-white/[0.08] bg-[#0d111a] p-4 sm:p-6 lg:p-10 shadow-xl shadow-black/40">
         {/* 1. Heading-এর উপরে Back to CyLab button */}
-        <div className="mb-4">
+        <div className="mb-3 sm:mb-4">
           <button
             onClick={() => navigate(`/${platformSlug || 'cylab'}`)}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-emerald-400 transition group py-1 px-2.5 rounded-md bg-white/[0.03] border border-white/[0.06] hover:border-emerald-500/40"
@@ -104,34 +104,34 @@ export const WriteupDetail: React.FC<WriteupDetailProps> = ({
         </div>
 
         {/* Title */}
-        <h1 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-white mb-4">
+        <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white mb-3 sm:mb-4 break-words">
           {writeup.title}
         </h1>
 
         {/* Metadata Badges Row matching Image 2 */}
-        <div className="flex flex-wrap items-center gap-2 pb-5 mb-6 border-b border-white/[0.08]">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 pb-4 sm:pb-5 mb-5 sm:mb-6 border-b border-white/[0.08]">
           {/* Platform */}
-          <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
-            <Layers className="w-3.5 h-3.5" />
-            {writeup.platform}
+          <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+            <Layers className="w-3.5 h-3.5 shrink-0" />
+            <span>{writeup.platform}</span>
           </span>
 
           {/* Category */}
-          <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-            <Tag className="w-3.5 h-3.5" />
-            {writeup.category}
+          <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <Tag className="w-3.5 h-3.5 shrink-0" />
+            <span>{writeup.category}</span>
           </span>
 
           {/* Difficulty */}
-          <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded bg-white/[0.04] text-slate-300 border border-white/[0.08]">
-            <Clock className="w-3.5 h-3.5" />
-            {writeup.difficulty}
+          <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded bg-white/[0.04] text-slate-300 border border-white/[0.08]">
+            <Clock className="w-3.5 h-3.5 shrink-0" />
+            <span>{writeup.difficulty}</span>
           </span>
 
           {/* Date */}
-          <span className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 px-2.5 py-1 rounded bg-white/[0.02] border border-white/[0.06]">
-            <Calendar className="w-3.5 h-3.5" />
-            {writeup.date}
+          <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-mono text-slate-400 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded bg-white/[0.02] border border-white/[0.06]">
+            <Calendar className="w-3.5 h-3.5 shrink-0" />
+            <span>{writeup.date}</span>
           </span>
 
           {/* Optional Assignment Tags */}
@@ -139,35 +139,51 @@ export const WriteupDetail: React.FC<WriteupDetailProps> = ({
             writeup.tags.map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/35 shadow-sm shadow-amber-500/10"
+                className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-mono font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/35 shadow-sm shadow-amber-500/10"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                {tag}
+                <span>{tag}</span>
               </span>
             ))}
         </div>
 
         {/* Markdown Content Area */}
-        <div className="writeup-prose text-slate-300 leading-relaxed space-y-4">
+        <div className="writeup-prose text-slate-300 leading-relaxed space-y-4 break-words min-w-0">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw, rehypeHighlight]}
             components={{
               h1: ({ ...props }) => (
-                <h1 className="text-2xl font-bold text-white mt-8 mb-4 pb-2 border-b border-white/[0.08]" {...props} />
+                <h1 className="text-xl sm:text-2xl font-bold text-white mt-8 mb-4 pb-2 border-b border-white/[0.08]" {...props} />
               ),
               h2: ({ ...props }) => (
-                <h2 className="text-xl font-bold text-white mt-6 mb-3 pb-1 border-b border-white/[0.05]" {...props} />
+                <h2 className="text-lg sm:text-xl font-bold text-white mt-6 mb-3 pb-1 border-b border-white/[0.05]" {...props} />
               ),
               h3: ({ ...props }) => (
-                <h3 className="text-lg font-semibold text-slate-100 mt-5 mb-2" {...props} />
+                <h3 className="text-base sm:text-lg font-semibold text-slate-100 mt-5 mb-2" {...props} />
               ),
-              p: ({ ...props }) => <p className="leading-7 my-3 text-slate-300 text-sm lg:text-base" {...props} />,
-              ul: ({ ...props }) => <ul className="list-disc list-inside space-y-1 my-3 text-slate-300 text-sm lg:text-base" {...props} />,
-              ol: ({ ...props }) => <ol className="list-decimal list-inside space-y-1.5 my-3 text-slate-300 text-sm lg:text-base" {...props} />,
+              p: ({ ...props }) => <p className="leading-7 my-3 text-slate-300 text-xs sm:text-sm lg:text-base" {...props} />,
+              ul: ({ ...props }) => <ul className="list-disc list-inside space-y-1 my-3 text-slate-300 text-xs sm:text-sm lg:text-base" {...props} />,
+              ol: ({ ...props }) => <ol className="list-decimal list-inside space-y-1.5 my-3 text-slate-300 text-xs sm:text-sm lg:text-base" {...props} />,
               li: ({ ...props }) => <li className="text-slate-300" {...props} />,
               a: ({ ...props }) => (
-                <a className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 transition" {...props} />
+                <a className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 transition break-all" {...props} />
+              ),
+              table: ({ ...props }) => (
+                <div className="overflow-x-auto my-4 rounded border border-white/[0.08]">
+                  <table className="w-full text-left border-collapse text-xs sm:text-sm min-w-[300px]" {...props} />
+                </div>
+              ),
+              th: ({ ...props }) => (
+                <th className="py-2 px-3 border-b border-white/[0.08] bg-white/[0.03] text-slate-300 font-semibold" {...props} />
+              ),
+              td: ({ ...props }) => (
+                <td className="py-2 px-3 border-b border-white/[0.04] text-slate-400" {...props} />
+              ),
+              pre: ({ ...props }) => (
+                <div className="overflow-x-auto max-w-full my-4 rounded-lg bg-[#0d111a] border border-white/[0.08]">
+                  <pre className="p-3 sm:p-4 text-xs sm:text-sm font-mono overflow-x-auto" {...props} />
+                </div>
               ),
               img: ({ src, alt, ...props }) => {
                 let cleanSrc = src || '';
@@ -178,11 +194,11 @@ export const WriteupDetail: React.FC<WriteupDetailProps> = ({
                   cleanSrc = `${baseAssetUrl}${cleanSrc.replace(/^\.\.\//, '')}`;
                 }
                 return (
-                  <div className="my-6 rounded-lg overflow-hidden border border-white/[0.1] bg-black/40 p-2 flex justify-center">
+                  <div className="my-4 sm:my-6 rounded-lg overflow-hidden border border-white/[0.1] bg-black/40 p-1.5 sm:p-2 flex justify-center">
                     <img
                       src={cleanSrc}
                       alt={alt || 'Writeup asset'}
-                      className="max-h-[520px] max-w-full rounded object-contain"
+                      className="max-h-[520px] max-w-full h-auto rounded object-contain"
                       loading="lazy"
                       {...props}
                     />
@@ -196,7 +212,7 @@ export const WriteupDetail: React.FC<WriteupDetailProps> = ({
                     {children}
                   </code>
                 ) : (
-                  <code className="text-red-400 bg-white/[0.06] px-1.5 py-0.5 rounded text-xs font-mono" {...props}>
+                  <code className="text-red-400 bg-white/[0.06] px-1.5 py-0.5 rounded text-[11px] sm:text-xs font-mono break-all" {...props}>
                     {children}
                   </code>
                 );
@@ -211,23 +227,24 @@ export const WriteupDetail: React.FC<WriteupDetailProps> = ({
       {/* Embedded CSS for Callout / Admonition Box */}
       <style>{`
         .admonition-callout {
-          margin: 1.5rem 0;
-          padding: 1rem 1.25rem;
+          margin: 1.25rem 0;
+          padding: 0.875rem 1rem;
           border-radius: 0.5rem;
           border: 1px solid rgba(45, 212, 191, 0.35);
           background-color: rgba(13, 27, 34, 0.85);
+          word-break: break-word;
         }
         .admonition-header {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          font-size: 0.88rem;
+          font-size: 0.85rem;
           font-weight: 700;
           color: #2dd4bf;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.375rem;
         }
         .admonition-body {
-          font-size: 0.88rem;
+          font-size: 0.85rem;
           line-height: 1.6;
           color: #cbd5e1;
         }
