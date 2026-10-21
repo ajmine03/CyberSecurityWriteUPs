@@ -80,6 +80,16 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
+      <a href="Hack The Box/htb-01/" class="writeup-row__title">Testing </a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Testing .</p>
+    </div>
+    <span class="badge badge--platform">Hack The Box</span>
+    <span class="badge badge--category">Writeup</span>
+    <span class="badge badge--medium"><span class="badge-dot"></span>Medium</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
       <a href="THM/thm-01/" class="writeup-row__title">Try Hack Me</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Try Hack Me.</p>
     </div>
