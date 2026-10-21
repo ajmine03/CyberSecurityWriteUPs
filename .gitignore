@@ -1,4 +1,7 @@
-# MkDocs build outputs
+# Dependencies & build outputs
+node_modules/
+dist/
+build/
 site/
 site_output/
 _site/

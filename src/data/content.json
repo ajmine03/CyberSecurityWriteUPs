@@ -1,0 +1,134 @@
+{
+  "platforms": [
+    {
+      "name": "CyLab",
+      "slug": "cylab",
+      "description": "Comprehensive challenge documentation for CyLab cybersecurity challenges.",
+      "count": 10
+    },
+    {
+      "name": "THM",
+      "slug": "thm",
+      "description": "TryHackMe rooms, challenges and methodology notes.",
+      "count": 0
+    },
+    {
+      "name": "Try Hack Me",
+      "slug": "try-hack-me",
+      "description": "Practical lab walkthroughs and tooling guides.",
+      "count": 0
+    }
+  ],
+  "writeups": [
+    {
+      "id": "3ff8b5aa-2f8e-800d-bed0-de4265d61ed0",
+      "slug": "bookmarklet",
+      "title": "Bookmarklet",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "Inspect JavaScript bookmarklets, run client scripts in developer console to extract flags.",
+      "content": "\n# Bookmarklet\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\n!!! tip \"Note ⚙\"\n    Why search for the flag when I can make a bookmarklet to print it for me?\n1. A bookmarklet is a bookmark that runs JavaScript instead of loading a webpage.\n2. What happens when you click a bookmarklet?\n3. Web browsers have other ways to run JavaScript too.\n\nA website with a javascript code. and what is bookmarklet ! a lang? \nsearch on google and run that code , found out the flag!\n\n\n![Image](assets/notion/bookmarklet/img_64d609242f53.png)\n"
+    },
+    {
+      "id": "3ff8b5aa-2f8e-808b-b57e-d0eac22c1308",
+      "slug": "cookiemonstersecretrecipe",
+      "title": "Cookie Monster Secret Recipe",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "Cookie inspection, session analysis, and storage analysis in web browser tools.",
+      "content": "\n# Cookie Monster Secret Recipe\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\nWeb Exploitation `Easy`\n\n\n!!! tip \"Note ⚙\"\n    Cookie Monster has hidden his top-secret cookie recipe somewhere on his website. As an aspiring cookie detective, your mission is to uncover this delectable secret. Can you outsmart Cookie Monster and find the hidden recipe?\n\njust e login page .\n\n\n![Image](assets/notion/cookiemonstersecretrecipe/img_0b6e99469cb2.png)\n\ncookies. uising hint 1 decode the cookies and found the flag \n\n\n![Image](assets/notion/cookiemonstersecretrecipe/img_10f27f74407f.png)\n"
+    },
+    {
+      "id": "3ff8b5aa-2f8e-8093-8fee-eb3d0a197352",
+      "slug": "crack-the-gate-1",
+      "title": "Crack The Gate 1",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "Client-side input verification bypass and logic inspection.",
+      "content": "\n# Crack The Gate 1\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\n!!! tip \"Note 💡\"\n    We’re in the middle of an investigation. One of our persons of interest, ctf player, is believed to be hiding sensitive data inside a restricted web portal. We’ve uncovered the email address he uses to log in: **`ctf-player@cylabacademy.org`**. Unfortunately, we don’t know the password, and the usual guessing techniques haven’t worked. But something feels off... it’s almost like the developer left a secret way in. Can you figure it out?\n\n\n\nThere is a login page and i dont know the password ! In source code page I found something\n\n\n\n![Image](assets/notion/crack-the-gate-1/img_2552aa0626c4.png)\n\nI google about Hint 02 and found ROT13 decoder :\n\n\n\n![Image](assets/notion/crack-the-gate-1/img_d4618514b7a9.png)\n\nI dont know about header usages !!! So ive to analysis\n\ni use a extension to add header \n\n\n![Image](assets/notion/crack-the-gate-1/img_023e2604e085.png)\n\nand try too loggin with that email and rand pass !\n\n\n\n![Image](assets/notion/crack-the-gate-1/img_57cb82c01eb4.png)\n\nGOT IT\n"
+    },
+    {
+      "id": "3ff8b5aa-2f8e-800c-bee1-f52b56eb3b46",
+      "slug": "headdump",
+      "title": "Head Dump",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "HTTP response header analysis and custom header inspection.",
+      "content": "\n# Head Dump\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\nWeb Exploitation `Easy`\n\n\n!!! tip \"Note ⚙\"\n    Welcome to the challenge! In this challenge, you will explore a web application and find an endpoint that exposes a file containing a hidden flag.\n\nA normal website : Inspecting it : using fuff to finding endpoint \n\n`ffuf -u `[`http://xebec.cylabacademy.net:30963/FUZZ`](http://xebec.cylabacademy.net:30963/FUZZ)` \\ -w /usr/share/wordlists/dirb/common.txt`\n\nnothing found ~!\n\n\n\n![Image](assets/notion/headdump/img_1e3fb7253a5a.png)\n\nfound a clickable link. and theres api-doc. \n\n\n![Image](assets/notion/headdump/img_47f6c326fd23.png)\n\nclick on the execute a download a 10mb file.\n\nusing cat, too many text !!! i need to use grep \n\n\n```javascript\ncat heapdump-1792419813648.heapsnapshot | grep -F \"academy{”\n```\n\n\n![Image](assets/notion/headdump/img_82ed9d4aa3bf.png)\n"
+    },
+    {
+      "id": "3ff8b5aa-2f8e-80cc-925e-e3b76873896b",
+      "slug": "intotheburp",
+      "title": "Into The Burp",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "Intercepting and modifying HTTP requests using Burp Suite proxy.",
+      "content": "\n# Into The Burp\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\n!!! tip \"Note ⚙\"\n    This website puts a two-factor prompt between you and the flag. Register an account, then take a close look at the requests your browser is actually sending. Try\n\n1. open burp suite CE and check the requests \n\n![Image](assets/notion/intotheburp/img_88d45e3ba523.png)\n\n1. open intercept to check the requests \n\n![Image](assets/notion/intotheburp/img_d5015e33bc10.png)\n\nasking for otp. use random otp to check the requests giving me errors!!\n\n1. removes otp line and sent request . and got the flag\n\n![Image](assets/notion/intotheburp/img_ba84b7b8e314.png)\n"
+    },
+    {
+      "id": "3ff8b5aa-2f8e-800a-97f7-d833ee57490a",
+      "slug": "localauthority",
+      "title": "Local Authority",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "Client-side authorization check bypass in login JavaScript assets.",
+      "content": "\n# Local Authority\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\n!!! tip \"Note ⚙\"\n    Can you get the flag?\n\nJust a login page ! \n\n\n![Image](assets/notion/localauthority/img_64b482eb33f0.png)\n\nI user rand user and pass to test. but always failed . opend inspect of that failed page to check\n\nfound secure.js \n\n\n![Image](assets/notion/localauthority/img_d2157e784a5a.png)\n\nloggod in with the user and pass. got my flag\n"
+    },
+    {
+      "id": "3ff8b5aa-2f8e-80b5-a94a-e07b87b76620",
+      "slug": "nosanity",
+      "title": "n0s4n1ty 1",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "Input sanitization flaws and payload crafting for web application flags.",
+      "content": "\n# n0s4n1ty 1\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\nWeb Exploitation `Easy` pico2025\n\n\n!!! tip \"Note ⚙\"\n    A developer has added profile picture upload functionality to a website. However, the implementation is flawed, and it presents an opportunity for you. Your mission, should you choose to accept it, is to navigate to the provided web page and locate the file upload area. Your ultimate goal is to find the hidden flag located in the **`/root`** directory.\n\nLets start : accroding to descriptions, the upload is vernable maybe i need php upload revershell .\n\n\n![Image](assets/notion/nosanity/img_a5b0d880a3cd.png)\n\nsetting up Listener , \n\n* `l`: Listen mode.\n* `v`: Verbose output.\n* `n`: Do not resolve DNS names (speeds up the connection).\n* `p 4444`: The port number you will specify in your PHP script.\nSaved the following template as rev.php and upload . php working but not connecting to my pc. maybe beacuse of private ip eventhough i used vpn but same problm !!\n\nSo i write a basic script to check echo works or not: \n\n`<?php\n// This is a single-line comment\necho \"Hello, World!\";\n?>`\n\n\n![Image](assets/notion/nosanity/img_9d75daccac0c.png)\n\nand its working ! now need to access now checking echo shell_exec('whoami'); this work or not, YESS works. \n\nnow using sudo -l as the hint mentioned !\n\n\n![Image](assets/notion/nosanity/img_6c3b653ea0bc.png)\n\nusing sudu ls /root i found flag.txt\n\n\n![Image](assets/notion/nosanity/img_2364e6b7f992.png)\n\nand found the flag.\n\n\n![Image](assets/notion/nosanity/img_f6abcc74969e.png)\n"
+    },
+    {
+      "id": "3ff8b5aa-2f8e-80c8-b9be-f8813c2ec8b4",
+      "slug": "old-sessions",
+      "title": "Old Sessions",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "Session timeout controls, cookie inspection, and privilege escalation.",
+      "content": "\n# Old Sessions\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\n`Easy` picoCTF 2026\n\nDescriptions : \n\n\n!!! tip \"Note 💡\"\n    Proper session timeout controls are critical for securing user accounts. If a user logs in on a public or shared computer but doesn’t explicitly log out (instead simply closing the browser tab), and session expiration dates are misconfigured, the session may remain active indefinitely.\n\nThe session expire date leading to cookies ! \nOk in the browser , theres login and registration option . I register with with user , pass : and login\n\n\n![Image](assets/notion/old-sessions/img_a030fa11493b.png)\n\nI found ADMIN comment , and cookies of my id . \n\n\n![Image](assets/notion/old-sessions/img_8edb8f6ae6ba.png)\n\nOHH! I missed a strange comment by mary_jones\n\n\n![Image](assets/notion/old-sessions/img_2e4411fd34f7.png)\n\nIn that page i found admin cookies\n\n 1) session:`pdQcI8hN6T0daaqZkThhaeB9frzGAF8iMWXTfONYF8Q`, {'_permanent': True, 'key': 'admin'}\n\nchanged the cookies of my login id to admin cookies \n\n\n![Image](assets/notion/old-sessions/img_3725ac135543.png)\n\nand Im in \n\n\n![Image](assets/notion/old-sessions/img_78a9e0f969c0.png)\n"
+    },
+    {
+      "id": "3ff8b5aa-2f8e-80e4-bfe5-cdadb6721390",
+      "slug": "unminify",
+      "title": "Unminify",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "De-obfuscating and pretty-printing minified JavaScript sources to reveal hidden flags.",
+      "content": "\n# Unminify\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\n![Image](assets/notion/unminify/img_d2ab1ce82ed9.png)\n\nI just CTRL+I to show the website and found it, why this is easy ?!\nAnyway its works but why !\n"
+    },
+    {
+      "id": "3ff8b5aa-2f8e-8000-8820-ec9c53382b7b",
+      "slug": "webdecode",
+      "title": "Web Decode",
+      "date": "2026-10-20",
+      "platform": "CyLab",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "description": "Base64 and URL encoding inspection in web challenge DOM elements.",
+      "content": "\n# Web Decode\n\n<div class=\"article-meta-badges\">\n  <span class=\"meta-badge meta-badge--platform\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"></path><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"></line></svg> CyLab</span>\n  <span class=\"meta-badge meta-badge--category\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line></svg> Web Exploitation</span>\n  <span class=\"meta-badge meta-badge--difficulty\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 14 14\"></polyline></svg> Easy</span>\n  <span class=\"meta-badge meta-badge--date\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"13\" height=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg> 2026-10-20</span>\n</div>\n\nWeb Exploitation `Easy`\n\n\n!!! tip \"Note ⚙\"\n    Do you know how to use the web inspector? Start searching\n\nA normal website : Inspecting it :\n\n\n![Image](assets/notion/webdecode/img_46d78d6acb3e.png)\n\n Nothing found unless the damn dark gif . going to decode it , Nahh nothing works , let me ispect again\n\n\n![Image](assets/notion/webdecode/img_d1b06705b8a1.png)\n\nwhats this. lets decode;\n\n\n![Image](assets/notion/webdecode/img_d90afc48a4c3.png)\n"
+    }
+  ]
+}
