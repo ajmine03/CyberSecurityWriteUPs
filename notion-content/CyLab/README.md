@@ -35,6 +35,16 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
+      <a href="cookies2/" class="writeup-row__title">Cookies</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Cookies.</p>
+    </div>
+    <span class="badge badge--category">Web Exploitation</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+    <span class="badge badge--date">2026-10-21</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
       <a href="crack-the-gate-1/" class="writeup-row__title">Crack The Gate 1</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Crack The Gate 1.</p>
     </div>
