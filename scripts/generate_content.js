@@ -100,6 +100,22 @@ if (fs.existsSync(notionContentDir)) {
         desc = plainText.slice(0, 140) + (plainText.length > 140 ? '...' : '');
       }
 
+      // Parse tags (optional, e.g. ["week03"] or "week03")
+      let tags = [];
+      if (Array.isArray(data.tags)) {
+        tags = data.tags.map(t => String(t).trim()).filter(Boolean);
+      } else if (typeof data.tags === 'string' && data.tags.trim()) {
+        try {
+          const parsed = JSON.parse(data.tags);
+          if (Array.isArray(parsed)) tags = parsed.map(t => String(t).trim()).filter(Boolean);
+          else tags = [data.tags.trim()];
+        } catch {
+          tags = data.tags.split(/[,;\s]+/).map(t => t.trim()).filter(Boolean);
+        }
+      } else if (typeof data.tag === 'string' && data.tag.trim()) {
+        tags = data.tag.split(/[,;\s]+/).map(t => t.trim()).filter(Boolean);
+      }
+
       const item = {
         id: data.notion_id || slug,
         slug,
@@ -108,6 +124,7 @@ if (fs.existsSync(notionContentDir)) {
         platform: data.platform || platformName,
         category: data.category || 'Web Exploitation',
         difficulty: data.difficulty || 'Easy',
+        tags,
         description: desc,
         content: normalizedContent,
       };

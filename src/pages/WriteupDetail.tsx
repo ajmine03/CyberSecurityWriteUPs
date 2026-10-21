@@ -133,6 +133,18 @@ export const WriteupDetail: React.FC<WriteupDetailProps> = ({
             <Calendar className="w-3.5 h-3.5" />
             {writeup.date}
           </span>
+
+          {/* Optional Assignment Tags */}
+          {writeup.tags &&
+            writeup.tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/35 shadow-sm shadow-amber-500/10"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                {tag}
+              </span>
+            ))}
         </div>
 
         {/* Markdown Content Area */}

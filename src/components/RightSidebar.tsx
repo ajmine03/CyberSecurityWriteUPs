@@ -81,9 +81,19 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
               <span className="truncate flex-1" title={w.title}>
                 {w.title}
               </span>
-              <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
-                {w.difficulty}
-              </span>
+              <div className="flex items-center gap-1 shrink-0">
+                {w.tags && w.tags.length > 0 && (
+                  <span
+                    className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30"
+                    title={`Tag: ${w.tags.join(', ')}`}
+                  >
+                    {w.tags[0]}
+                  </span>
+                )}
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  {w.difficulty}
+                </span>
+              </div>
             </NavLink>
           );
         })}

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, ChevronRight, ChevronDown } from 'lucide-react';
+import { Search, ChevronRight, ChevronDown, Tag as TagIcon, X } from 'lucide-react';
 import { Platform, Writeup } from '../types';
 
 interface DashboardProps {
@@ -18,6 +18,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
   const [localSearch, setLocalSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
+  const [selectedTag, setSelectedTag] = useState('All Tags');
   const [selectedDifficulty, setSelectedDifficulty] = useState('All Difficulties');
   const [sortOrder, setSortOrder] = useState('Newest First');
 
@@ -33,6 +34,32 @@ export const Dashboard: React.FC<DashboardProps> = ({
     return ['All Categories', ...Array.from(set)];
   }, [platformWriteups]);
 
+  // Extract unique tags and count of tagged items
+  const { allTags, taggedCount } = useMemo(() => {
+    const tagSet = new Set<string>();
+    let count = 0;
+    platformWriteups.forEach((w) => {
+      if (w.tags && w.tags.length > 0) {
+        count++;
+        w.tags.forEach((t) => tagSet.add(t));
+      }
+    });
+    return {
+      allTags: Array.from(tagSet),
+      taggedCount: count,
+    };
+  }, [platformWriteups]);
+
+  // Tag filter dropdown options
+  const tagOptions = useMemo(() => {
+    const options = ['All Tags'];
+    if (taggedCount > 0) {
+      options.push('⚡ Tagged Only');
+      allTags.forEach((t) => options.push(t));
+    }
+    return options;
+  }, [allTags, taggedCount]);
+
   const difficulties = ['All Difficulties', 'Easy', 'Medium', 'Hard'];
   const sortOptions = ['Newest First', 'Oldest First', 'Title A-Z'];
 
@@ -47,17 +74,24 @@ export const Dashboard: React.FC<DashboardProps> = ({
           w.title.toLowerCase().includes(query) ||
           w.category.toLowerCase().includes(query) ||
           w.description.toLowerCase().includes(query) ||
-          w.content.toLowerCase().includes(query);
+          w.content.toLowerCase().includes(query) ||
+          Boolean(w.tags && w.tags.some((t) => t.toLowerCase().includes(query)));
 
         const matchesCategory =
           selectedCategory === 'All Categories' ||
           w.category.toLowerCase() === selectedCategory.toLowerCase();
 
+        const matchesTag =
+          selectedTag === 'All Tags' ||
+          (selectedTag === '⚡ Tagged Only'
+            ? Boolean(w.tags && w.tags.length > 0)
+            : Boolean(w.tags && w.tags.includes(selectedTag)));
+
         const matchesDifficulty =
           selectedDifficulty === 'All Difficulties' ||
           w.difficulty.toLowerCase() === selectedDifficulty.toLowerCase();
 
-        return matchesQuery && matchesCategory && matchesDifficulty;
+        return matchesQuery && matchesCategory && matchesTag && matchesDifficulty;
       })
       .sort((a, b) => {
         if (sortOrder === 'Newest First') {
@@ -74,6 +108,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
     localSearch,
     globalSearch,
     selectedCategory,
+    selectedTag,
     selectedDifficulty,
     sortOrder,
   ]);
@@ -88,11 +123,44 @@ export const Dashboard: React.FC<DashboardProps> = ({
             {platform.name} Writeups
           </h1>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5 flex-wrap">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               Platform Archive
             </span>
+
+            {/* Quick 1-click toggle to show only tagged assignments if any exist */}
+            {taggedCount > 0 && (
+              <button
+                onClick={() =>
+                  setSelectedTag(selectedTag === '⚡ Tagged Only' ? 'All Tags' : '⚡ Tagged Only')
+                }
+                className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider transition ${
+                  selectedTag === '⚡ Tagged Only'
+                    ? 'bg-amber-400/20 text-amber-300 border border-amber-400/50 ring-1 ring-amber-400/30'
+                    : 'bg-amber-400/10 text-amber-300/80 hover:text-amber-300 border border-amber-400/25 hover:border-amber-400/40'
+                }`}
+                title="Click to toggle only tagged challenges (e.g. current assignment)"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                Tagged Only ({taggedCount})
+              </button>
+            )}
+
+            {/* Active Tag pill if a specific tag is selected */}
+            {selectedTag !== 'All Tags' && selectedTag !== '⚡ Tagged Only' && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                <TagIcon className="w-3 h-3" />
+                <span>{selectedTag}</span>
+                <button
+                  onClick={() => setSelectedTag('All Tags')}
+                  className="hover:text-white ml-0.5"
+                  title="Clear tag filter"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              </span>
+            )}
           </div>
 
           <p className="text-sm text-slate-400 max-w-2xl leading-relaxed">
@@ -101,7 +169,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
 
         {/* Filter Controls Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
           {/* Search challenges input */}
           <div className="relative flex items-center lg:col-span-1">
             <Search className="absolute left-3 w-4 h-4 text-slate-500" />
@@ -124,6 +192,26 @@ export const Dashboard: React.FC<DashboardProps> = ({
               {categories.map((c) => (
                 <option key={c} value={c}>
                   {c}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500 pointer-events-none" />
+          </div>
+
+          {/* Tag Filter Dropdown */}
+          <div className="relative">
+            <select
+              value={selectedTag}
+              onChange={(e) => setSelectedTag(e.target.value)}
+              className={`w-full appearance-none bg-[#111726] text-xs px-3 py-2 pr-8 rounded-lg border transition cursor-pointer ${
+                selectedTag !== 'All Tags'
+                  ? 'border-amber-400/50 text-amber-300 font-medium'
+                  : 'border-white/[0.08] text-slate-200'
+              } focus:outline-none focus:border-amber-400/60`}
+            >
+              {tagOptions.map((t) => (
+                <option key={t} value={t}>
+                  {t}
                 </option>
               ))}
             </select>
@@ -183,9 +271,26 @@ export const Dashboard: React.FC<DashboardProps> = ({
                     onClick={() => navigate(`/${platform.slug}/${w.slug}`)}
                     className="group hover:bg-white/[0.03] cursor-pointer transition"
                   >
-                    {/* Challenge Title */}
+                    {/* Challenge Title + Optional Tag Highlight Badge */}
                     <td className="py-3.5 px-4 font-semibold text-sm text-slate-200 group-hover:text-emerald-400 transition">
-                      {w.title}
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span>{w.title}</span>
+                        {w.tags &&
+                          w.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedTag(tag);
+                              }}
+                              title={`Click to filter by tag: ${tag}`}
+                              className="inline-flex items-center gap-1 text-[11px] font-mono font-semibold px-2 py-0.5 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/35 hover:bg-amber-400/25 transition shadow-sm shadow-amber-500/10 shrink-0 cursor-pointer"
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                              {tag}
+                            </span>
+                          ))}
+                      </div>
                     </td>
 
                     {/* Category */}

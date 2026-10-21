@@ -13,6 +13,7 @@ export interface Writeup {
   platform: string;
   category: string;
   difficulty: 'Easy' | 'Medium' | 'Hard' | string;
+  tags?: string[];
   description: string;
   content: string;
 }

@@ -373,6 +373,33 @@ class NotionSyncClient:
           t.get("plain_text", "") for t in desc_prop.get("rich_text", [])
       ).strip()
 
+    # Tags (optional, e.g. "week03")
+    tags: List[str] = []
+    tags_prop = (
+        props.get("Tags")
+        or props.get("tags")
+        or props.get("Tag")
+        or props.get("tag")
+    )
+    if tags_prop:
+      p_type = tags_prop.get("type")
+      if p_type == "multi_select":
+        tags = [
+            s.get("name", "").strip()
+            for s in tags_prop.get("multi_select", [])
+            if s.get("name")
+        ]
+      elif p_type == "select":
+        s_name = (tags_prop.get("select") or {}).get("name", "").strip()
+        if s_name:
+          tags = [s_name]
+      elif p_type == "rich_text":
+        t_text = "".join(
+            t.get("plain_text", "") for t in tags_prop.get("rich_text", [])
+        ).strip()
+        if t_text:
+          tags = [t.strip() for t in re.split(r"[,;]\s*", t_text) if t.strip()]
+
     return {
         "id": page.get("id"),
         "title": title,
@@ -381,6 +408,7 @@ class NotionSyncClient:
         "platform": platform or "General",
         "category": category or "Writeup",
         "difficulty": difficulty or "Medium",
+        "tags": tags,
         "description": (
             desc or f"Walkthrough and methodology notes for {title}."
         ),
@@ -621,13 +649,17 @@ class NotionSyncClient:
     elif "hard" in d_lower:
       diff_badge_class = "hard"
 
+    tags_line = ""
+    if meta.get("tags"):
+      tags_line = f"tags: {json.dumps(meta['tags'])}\n"
+
     header_block = f"""---
 title: {meta['title']}
 date: {meta['date']}
 platform: {meta['platform']}
 category: {meta['category']}
 difficulty: {meta['difficulty']}
-notion_id: {meta['id']}
+{tags_line}notion_id: {meta['id']}
 ---
 
 # {meta['title']}
