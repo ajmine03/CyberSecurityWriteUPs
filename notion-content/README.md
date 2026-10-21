@@ -50,6 +50,26 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
+      <a href="CyLab/include/" class="writeup-row__title">Include</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Include.</p>
+    </div>
+    <span class="badge badge--platform">CyLab</span>
+    <span class="badge badge--category">Web Exploitation</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
+      <a href="CyLab/inspect-html/" class="writeup-row__title">Inspect Html</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Inspect Html.</p>
+    </div>
+    <span class="badge badge--platform">CyLab</span>
+    <span class="badge badge--category">Web Exploitation</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
       <a href="CyLab/intotheburp/" class="writeup-row__title">Into The Burp</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Into The Burp.</p>
     </div>
@@ -72,6 +92,16 @@
     <div class="writeup-row__main">
       <a href="CyLab/old-sessions/" class="writeup-row__title">Old Sessions</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Old Sessions.</p>
+    </div>
+    <span class="badge badge--platform">CyLab</span>
+    <span class="badge badge--category">Web Exploitation</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
+      <a href="CyLab/scavengerhunt/" class="writeup-row__title">Scavenger Hunt</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Scavenger Hunt.</p>
     </div>
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>

@@ -55,6 +55,26 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
+      <a href="include/" class="writeup-row__title">Include</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Include.</p>
+    </div>
+    <span class="badge badge--category">Web Exploitation</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+    <span class="badge badge--date">2026-10-21</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
+      <a href="inspect-html/" class="writeup-row__title">Inspect Html</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Inspect Html.</p>
+    </div>
+    <span class="badge badge--category">Web Exploitation</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+    <span class="badge badge--date">2026-10-21</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
       <a href="intotheburp/" class="writeup-row__title">Into The Burp</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Into The Burp.</p>
     </div>
@@ -81,6 +101,16 @@
     <span class="badge badge--category">Web Exploitation</span>
     <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
     <span class="badge badge--date">2026-10-20</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
+      <a href="scavengerhunt/" class="writeup-row__title">Scavenger Hunt</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Scavenger Hunt.</p>
+    </div>
+    <span class="badge badge--category">Web Exploitation</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+    <span class="badge badge--date">2026-10-21</span>
   </div>
 
   <div class="writeup-row">
