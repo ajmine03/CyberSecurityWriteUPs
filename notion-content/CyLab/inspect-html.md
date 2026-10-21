@@ -19,10 +19,10 @@ notion_id: 4008b5aa-2f8e-807c-891b-ddd36425ed65
 !!! tip "Note ⚙"
     Can you get the flag?
 
+Just a website with some articles !
+
 
 ![Image](../assets/notion/inspect-html/img_5e73b7c735be.png)
-
-Just a website with some articles !
 
 checking the sourcecode page :
 
