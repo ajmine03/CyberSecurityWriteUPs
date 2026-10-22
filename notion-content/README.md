@@ -30,8 +30,8 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="CyLab/cookies2/" class="writeup-row__title">Cookies</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for Cookies.</p>
+      <a href="CyLab/crack-the-gate-1/" class="writeup-row__title">Crack The Gate 1</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Crack The Gate 1.</p>
     </div>
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>
@@ -40,8 +40,8 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="CyLab/crack-the-gate-1/" class="writeup-row__title">Crack The Gate 1</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for Crack The Gate 1.</p>
+      <a href="CyLab/getahead/" class="writeup-row__title">GET aHEAD</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for GET aHEAD.</p>
     </div>
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>

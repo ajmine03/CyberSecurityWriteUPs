@@ -45,6 +45,16 @@ hide:
 
   <div class="writeup-row">
     <div class="writeup-row__main">
+      <a href="CyLab/getahead/" class="writeup-row__title">GET aHEAD</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for GET aHEAD.</p>
+    </div>
+    <span class="badge badge--platform">CyLab</span>
+    <span class="badge badge--category">Web Exploitation</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
       <a href="Hack The Box/htb-01/" class="writeup-row__title">Testing </a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Testing .</p>
     </div>
@@ -77,16 +87,6 @@ hide:
     <div class="writeup-row__main">
       <a href="CyLab/include/" class="writeup-row__title">Include</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Include.</p>
-    </div>
-    <span class="badge badge--platform">CyLab</span>
-    <span class="badge badge--category">Web Exploitation</span>
-    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
-  </div>
-
-  <div class="writeup-row">
-    <div class="writeup-row__main">
-      <a href="CyLab/cookies2/" class="writeup-row__title">Cookies</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for Cookies.</p>
     </div>
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>

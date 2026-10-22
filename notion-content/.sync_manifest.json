@@ -107,15 +107,6 @@
     "synced_at": "2026-10-21T08:21:12.329299+00:00",
     "title": "Testing "
   },
-  "4008b5aa-2f8e-802f-8e5e-d5bfb993bec4": {
-    "hash": "361bda0fa56970daef586cda17e25508a1c205a15db85e6dccf78a7b13d8e231",
-    "last_edited_time": "2026-10-21T08:33:00.000Z",
-    "path": "CyLab/cookies2.md",
-    "platform": "CyLab",
-    "slug": "cookies2",
-    "synced_at": "2026-10-21T08:33:55.438539+00:00",
-    "title": "Cookies"
-  },
   "4008b5aa-2f8e-807c-891b-ddd36425ed65": {
     "hash": "51dac22bd1ae7a0124f4049cfbc1e171f017886069910b34dd2fcc6ae799bddf",
     "last_edited_time": "2026-10-21T11:31:00.000Z",
@@ -142,5 +133,14 @@
     "slug": "scavengerhunt",
     "synced_at": "2026-10-21T08:21:09.328521+00:00",
     "title": "Scavenger Hunt"
+  },
+  "4018b5aa-2f8e-80e4-97d0-dd9875d60126": {
+    "hash": "d75044405a95bc7470ed199184c05f74c7e315e64be80423db4d3588f458920d",
+    "last_edited_time": "2026-10-22T15:42:00.000Z",
+    "path": "CyLab/getahead.md",
+    "platform": "CyLab",
+    "slug": "getahead",
+    "synced_at": "2026-10-22T19:37:10.767854+00:00",
+    "title": "GET aHEAD"
   }
 }
