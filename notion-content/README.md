@@ -130,16 +130,6 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="Hack The Box/hellotesting/" class="writeup-row__title">Testing nothing</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for Testing nothing.</p>
-    </div>
-    <span class="badge badge--platform">Hack The Box</span>
-    <span class="badge badge--category">Writeup</span>
-    <span class="badge badge--medium"><span class="badge-dot"></span>Medium</span>
-  </div>
-
-  <div class="writeup-row">
-    <div class="writeup-row__main">
       <a href="CyLab/unminify/" class="writeup-row__title">Unminify</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Unminify.</p>
     </div>
