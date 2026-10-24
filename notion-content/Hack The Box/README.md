@@ -15,11 +15,11 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="htb-01/" class="writeup-row__title">Testing </a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for Testing .</p>
+      <a href="hellotesting/" class="writeup-row__title">Testing nothing</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Testing nothing.</p>
     </div>
     <span class="badge badge--category">Writeup</span>
     <span class="badge badge--medium"><span class="badge-dot"></span>Medium</span>
-    <span class="badge badge--date">2026-10-21</span>
+    <span class="badge badge--date">2026-10-24</span>
   </div>
 </div>
