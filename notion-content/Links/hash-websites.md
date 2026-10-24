@@ -23,3 +23,9 @@ notion_id: 4018b5aa-2f8e-8046-9791-d83a5d6874b4
 
 
 [https://www.tunnelsup.com/hash-analyzer/](https://www.tunnelsup.com/hash-analyzer/)
+
+
+[https://gchq.github.io/CyberChef/](https://gchq.github.io/CyberChef/)
+
+
+[https://cryptii.com/](https://cryptii.com/)
