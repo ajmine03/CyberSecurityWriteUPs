@@ -45,22 +45,22 @@ hide:
 
   <div class="writeup-row">
     <div class="writeup-row__main">
+      <a href="Links/hash-websites/" class="writeup-row__title">Hashing Websites</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Hashing Websites.</p>
+    </div>
+    <span class="badge badge--platform">Links</span>
+    <span class="badge badge--category">Tools</span>
+    <span class="badge badge--medium"><span class="badge-dot"></span>Medium</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
       <a href="CyLab/getahead/" class="writeup-row__title">GET aHEAD</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for GET aHEAD.</p>
     </div>
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>
     <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
-  </div>
-
-  <div class="writeup-row">
-    <div class="writeup-row__main">
-      <a href="Hack The Box/htb-01/" class="writeup-row__title">Testing </a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for Testing .</p>
-    </div>
-    <span class="badge badge--platform">Hack The Box</span>
-    <span class="badge badge--category">Writeup</span>
-    <span class="badge badge--medium"><span class="badge-dot"></span>Medium</span>
   </div>
 
   <div class="writeup-row">
@@ -121,16 +121,6 @@ hide:
     <span class="badge badge--platform">CyLab</span>
     <span class="badge badge--category">Web Exploitation</span>
     <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
-  </div>
-
-  <div class="writeup-row">
-    <div class="writeup-row__main">
-      <a href="Try Hack Me/thm-01/" class="writeup-row__title">Testing</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for Testing.</p>
-    </div>
-    <span class="badge badge--platform">Try Hack Me</span>
-    <span class="badge badge--category">Writeup</span>
-    <span class="badge badge--medium"><span class="badge-dot"></span>Medium</span>
   </div>
 
   <div class="writeup-row">

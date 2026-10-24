@@ -4,7 +4,6 @@ date: 2026-10-20
 platform: CyLab
 category: Web Exploitation
 difficulty: Easy
-tags: ["Week03"]
 notion_id: 3ff8b5aa-2f8e-80b5-a94a-e07b87b76620
 ---
 
