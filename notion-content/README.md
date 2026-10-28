@@ -130,16 +130,6 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
-      <a href="THM/Teesdsddt/" class="writeup-row__title">Test</a>
-      <p class="writeup-row__desc">Walkthrough and methodology notes for Test.</p>
-    </div>
-    <span class="badge badge--platform">THM</span>
-    <span class="badge badge--category">Tools</span>
-    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
-  </div>
-
-  <div class="writeup-row">
-    <div class="writeup-row__main">
       <a href="CyLab/unminify/" class="writeup-row__title">Unminify</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Unminify.</p>
     </div>
