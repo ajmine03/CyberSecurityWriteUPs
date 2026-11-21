@@ -130,6 +130,16 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
+      <a href="Hack The Box/typeofshells/" class="writeup-row__title">Types of Shells</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Types of Shells.</p>
+    </div>
+    <span class="badge badge--platform">Hack The Box</span>
+    <span class="badge badge--category">Getting Started</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
       <a href="CyLab/unminify/" class="writeup-row__title">Unminify</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Unminify.</p>
     </div>

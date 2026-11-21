@@ -133,5 +133,14 @@
     "slug": "getahead",
     "synced_at": "2026-10-22T19:37:10.767854+00:00",
     "title": "GET aHEAD"
+  },
+  "41f8b5aa-2f8e-80a8-8656-c00cfcff9631": {
+    "hash": "31737fe13f8ed1f7ab87b9f6fdb4a4f38455d976ed1a636714ec51f6bb9a25a1",
+    "last_edited_time": "2026-11-21T19:50:00.000Z",
+    "path": "Hack The Box/typeofshells.md",
+    "platform": "Hack The Box",
+    "slug": "typeofshells",
+    "synced_at": "2026-11-21T19:50:40.564435+00:00",
+    "title": "Types of Shells"
   }
 }
