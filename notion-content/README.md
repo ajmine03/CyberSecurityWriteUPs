@@ -120,6 +120,16 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
+      <a href="Hack The Box/privilegeEscalation/" class="writeup-row__title">Privilege Escalation</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Privilege Escalation.</p>
+    </div>
+    <span class="badge badge--platform">Hack The Box</span>
+    <span class="badge badge--category">Getting Started</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
       <a href="CyLab/scavengerhunt/" class="writeup-row__title">Scavenger Hunt</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Scavenger Hunt.</p>
     </div>

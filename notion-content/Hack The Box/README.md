@@ -15,6 +15,16 @@
 
   <div class="writeup-row">
     <div class="writeup-row__main">
+      <a href="privilegeEscalation/" class="writeup-row__title">Privilege Escalation</a>
+      <p class="writeup-row__desc">Walkthrough and methodology notes for Privilege Escalation.</p>
+    </div>
+    <span class="badge badge--category">Getting Started</span>
+    <span class="badge badge--easy"><span class="badge-dot"></span>Easy</span>
+    <span class="badge badge--date">2026-11-25</span>
+  </div>
+
+  <div class="writeup-row">
+    <div class="writeup-row__main">
       <a href="typeofshells/" class="writeup-row__title">Types of Shells</a>
       <p class="writeup-row__desc">Walkthrough and methodology notes for Types of Shells.</p>
     </div>

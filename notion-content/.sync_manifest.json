@@ -142,5 +142,14 @@
     "slug": "typeofshells",
     "synced_at": "2026-11-21T19:50:40.564435+00:00",
     "title": "Types of Shells"
+  },
+  "4238b5aa-2f8e-80cb-8637-f7ccca999375": {
+    "hash": "cd0f605458e33c0f7692da2367c7f7697b63ff7c17336d63a1fd3e7817d018bb",
+    "last_edited_time": "2026-11-25T03:53:00.000Z",
+    "path": "Hack The Box/privilegeEscalation.md",
+    "platform": "Hack The Box",
+    "slug": "privilegeEscalation",
+    "synced_at": "2026-11-26T01:43:46.311059+00:00",
+    "title": "Privilege Escalation"
   }
 }
